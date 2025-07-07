@@ -1,4 +1,136 @@
 {
-    "welcome": "Добро пожаловать в мое приложение!",
-    "greeting": "Привет, {{name}}!"
+    "common": {
+        "marketingSolutions": "Маркетинговые решения",
+        "businessBigData": "Бизнес BigData",
+        "rus": "Рус",
+        "kaz": "Қаз",
+        "leaveRequest": "Оставить заявку",
+        "readMore": "Подробнее",
+        "ourAdvantages": "Наши преимущества",
+        "services": "Услуги",
+        "financialServices": "Финансовые сервисы",
+        "other": "Другое"
+    },
+    "marketingSolutionsPage": {
+        "heroSection": {
+            "title": "Маркетинговые решения",
+            "description": "Инструменты для привлечения и удержания клиентов"
+        },
+        "advantages": {
+            "wideRangeOfServices": "Широкий спектр услуг для развития бизнеса",
+            "highSpeedAndCoverage": "Высокая скорость и охват",
+            "modernTechnologies": "Современные технологии"
+        },
+        "kcellContact": {
+            "title": "Кселл Контакт",
+            "subtitle": "точный доступ к вашей аудитории",
+            "description": "Запускайте эффективные кампании с «Кселл Контакт» — сервисом таргетированной смс рассылки по абонентам SMART."
+        },
+        "leadGeneration": {
+            "title": "Лидогенерация",
+            "subtitle": "поток клиентов на ваш сайт",
+            "description": "Запускайте маркетинговые кампании с сервисом «Лидогенерация» — технологическое решение, которое помогает находить заинтересованных клиентов среди абонентов."
+        },
+        "digitalTarget": {
+            "title": "Digital Target",
+            "subtitle": "маркетинг в digital-среде",
+            "description": "Запуск кампаний с использованием точного таргетинга на целевую аудиторию в веб-пространстве."
+        },
+        "targetCall": {
+            "title": "Target Call",
+            "subtitle": "автоматический обзвон вашей целевой аудитории",
+            "description": "Дополнительная услуга к Виртуальной АТС позволяет запускать обзвоны по точно настроенной целевой аудитории"
+        }
+    },
+    "form": {
+        "fillOutForm": "Заполните анкету и получите коммерческое предложение",
+        "yourName": "Ваше имя",
+        "howToAddressYou": "Как к Вам обращаться?",
+        "phone": "Телефон"
+    },
+    "footer": {
+        "kcellBusinessBigData": "Kcell Бизнес BigData",
+        "forInvestors": "Инвесторам",
+        "forPartners": "Партнерам",
+        "forClients": "Клиентам",
+        "aboutCompany": "О компании",
+        "successStory": "История успеха",
+        "careersInKcell": "Карьера в Kcell",
+        "procurements": "Закупки",
+        "policies": "Политики",
+        "responsibleBusiness": "Ответственный бизнес",
+        "publicOfferAgreement": "Публичный договор",
+        "news": "Новости",
+        "pressCenter": "Пресс-центр",
+        "frequentlyAskedQuestions": "Популярные вопросы",
+        "archiveOfGoodsAndServices": "Архив товаров и услуг",
+        "becomeCorporateClient": "Стать корпоративным клиентом",
+        "corporateClientAdvantages": "Преимущества корпоративного клиента",
+        "forCorporateClients": "Для корпоративных клиентов:",
+        "serviceQuestions": "Сервисные вопросы",
+        "licenseText": "Государственная лицензия МТК № ДС 0000270 от 08.06.1998, бессрочная...",
+        "copyright": "© АО «Kcell» 2000–2024",
+        "privacyPolicy": "Политика конфиденциальности",
+        "serviceContact": "Сервис:"
+    },
+    "businessBigDataPage": {
+        "heroSection": {
+            "title": "Бизнес взгляд",
+            "description": "Аналитические отчёты на основе обезличенных данных абонентов Kcell/Activ по заданным критериям."
+        },
+        "mainAdvantages": {
+            "title": "Основные преимущества",
+            "parametersInfo": "Более 400 параметров, 7 миллионов активных абонентов, 50 миллиардов событий в сети ежедневно, 2,5 петабайт данных для анализа.",
+            "aggregatedData": "Агрегированные данные по Республике, области, городу и т.п.",
+            "reportFormats": "Поддержка различных форматов отчетов (Excel, PowerPoint, Power BI)."
+        },
+        "featuresAndCapabilities": {
+            "title": "Функции и возможности",
+            "geoanalyticsAndHeatmaps": "Геоаналитика и тепловые карты",
+            "socioDemographicParameters": "Социально демографические параметры",
+            "behavioralAnalytics": "Поведенческая аналитика по трафику и интересам"
+        },
+        "workflow": {
+            "title": "Схема работы",
+            "fillFormOrMeet": "Заполнение анкеты или встреча",
+            "technicalSpecificationApproval": "Согласование технического задания",
+            "commercialProposalCalculation": "Расчет коммерческого предложения",
+            "reportPreparationAndTransfer": "Подготавливается и передача отчета"
+        },
+        "technicalIntegration": {
+            "title": "Техническая интеграция",
+            "description": "Техническая интеграция не требуется — результат передается в формате Excel, PDF, по API или ссылкой на интерактивный дэшборд"
+        },
+        "usageExamples": {
+            "title": "Примеры использования",
+            "geolocationReport": {
+                "title": "Геолокационный отчет по области, району, населенному пункту",
+                "description": "портрет жителей, плотность населения, места скопления"
+            },
+            "socialScoring": {
+                "title": "Социальный скоринг",
+                "description": "соц дем параметры и интересы (звонковые, интернет и СМС) для открытия новых точек, анализа посетителей, поиска потенциальных клиентов"
+            },
+            "tourismMonitoring": {
+                "title": "Мониторинг по туристическим объектам",
+                "description": "аналитика посещений в разрезе периода, места проживания туристов, доля иностранных туристов и страны, откуда они прибыли"
+            },
+            "behavioralAndGeoAnalysis": {
+                "title": "Поведенческий и гео анализ",
+                "description": "аналитика по группам: школьники, студенты, высокодоходные абоненты и тд."
+            },
+            "mobileDeviceAnalytics": {
+                "title": "Аналитика по мобильным устройствам",
+                "description": "для дистрибьюторов и производителей устройств. Портреты пользователей, геолокации, количества устройств в разрезе периодов и моделей, замены и переходы на другие устройства."
+            }
+        },
+        "pricing": "Стоимость в тенге с учетом НДС:",
+        "hoursAnalysis": "часы анализа",
+        "otherOffers": "Другие предложения"
+    },
+    "headerLinks": {
+        "digitalResearch": "Digital Research",
+        "scoring": "Скоринг",
+        "verification": "Верификация"
+    }
 }
