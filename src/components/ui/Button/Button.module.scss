@@ -1,0 +1,178 @@
+.button {
+	position: relative;
+	z-index: $ui-index-1;
+	font-family: inherit;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: normal;
+	margin: 0;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	border-radius: 0.625rem;
+	padding: 0.875rem rem(21);
+	transition: 0.15s ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.primary {
+		color: $white;
+		background-color: $accent;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(151deg, #fea35c -5.22%, #f9559c 55.31%, #8731f1 117.31%);
+			z-index: -1;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+		}
+		&:global {
+			&.active {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.white {
+		color: $accent;
+		background-color: $white;
+		padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+		border-radius: 3.75rem;
+		@media (min-width: $md2) {
+			padding: 0.875rem 0.875rem 0.875rem 2.125rem;
+		}
+		.buttonText {
+			&::after {
+				content: attr(data-title);
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				background-image: linear-gradient(151deg, #fea35c -5.22%, #f9559c 55.31%, #8731f1 117.31%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				opacity: 0;
+				transition: 0.15s ease-in-out;
+			}
+		}
+		.buttonIcon {
+			background: linear-gradient(151deg, #fea35c -5.22%, #f9559c 55.31%, #8731f1 117.31%);
+		}
+		&:hover {
+			.buttonText {
+				background-image: linear-gradient(151deg, #fea35c -5.22%, #f9559c 55.31%, #8731f1 117.31%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				&::after {
+					opacity: 1;
+				}
+			}
+			.buttonIcon {
+				&::before {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&Icon {
+		.white & {
+			position: relative;
+			z-index: $ui-index-1;
+			width: 2.5rem;
+			height: 2.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			color: $white;
+			transition: 0.15s ease-in-out;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(151deg, #8a60f3 -5.13%, #50388d 111.21%);
+				border-radius: 50%;
+				transition: opacity 0.15s ease-in-out;
+				z-index: -1;
+			}
+			@media (min-width: $md2) {
+				width: 3.75rem;
+				height: 3.75rem;
+			}
+		}
+	}
+
+	&Text {
+		position: relative;
+		display: inline-block;
+		transition: 0.15s ease-in-out;
+	}
+
+	&.large {
+		font-size: 1rem;
+		padding: 1rem;
+		border-radius: 1rem;
+		min-height: rem(54);
+		@media (min-width: $md2) {
+			border-radius: 1.25rem;
+			padding: 1.5rem 2rem;
+			font-size: 1.25rem;
+		}
+	}
+
+	&.medium {
+		font-size: 0.875rem;
+		@media (min-width: $md2) {
+			font-size: 1.125rem;
+		}
+	}
+}
+
+// .small {
+// 	height: 48px;
+// 	width: 100%;
+
+// 	font-size: 14px;
+// 	font-weight: 500;
+// 	line-height: 18px;
+// }
+
+// .big {
+// 	width: 100%;
+// 	font-weight: 500;
+
+// 	height: 48px;
+// 	font-size: 14px;
+// 	line-height: math.div(16, 14);
+// 	@media (min-width: $md2) {
+// 		height: 62px;
+// 		font-size: 16px;
+// 		line-height: math.div(18, 16);
+// 	}
+// }
