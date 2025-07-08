@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import css from './Footer.module.scss';
 import clsx from 'clsx';
-import Logo from 'src/assets/images/logo.svg?react';
-import ArrowRight from 'src/icons/ArrowRight.svg?react';
+// import Logo from 'src/assets/images/logo.svg?react';
+// import ArrowRight from 'src/icons/ArrowRight.svg?react';
 import { Button } from '@ui/Button';
 
 
@@ -34,7 +34,7 @@ export const Footer: FC = () => {
                 <div className={css.footerBody}>
                     <div className={css.footerMain}>
                         <a href="#" className={css.footerLogo}>
-                            <Logo />
+
                         </a>
                     </div>
                     <nav className={css.footerMenu}>
@@ -53,7 +53,6 @@ export const Footer: FC = () => {
                         <Button
                             href={"https://panel.easythink.dev/"}
                             className={css.footerBtn}
-                            icon={<ArrowRight />}
                         >
                             To Easythink Panel
                         </Button>

@@ -1,13 +1,13 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import css from './Button.module.scss';
 import clsx from "clsx";
 
 interface Props {
     className?: string;
     type?: 'primary' | 'white';
-    size?: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium';
+    rounded?: "small" | "default";
     disabled?: boolean;
-    icon?: ReactNode;
     onClick?: () => void;
     href?: string;
 }
@@ -16,8 +16,8 @@ export const Button: FC<PropsWithChildren<Props>> = ({
     className,
     type = 'primary',
     size = 'small',
+    rounded = 'default',
     disabled = false,
-    icon,
     onClick,
     href,
     children
@@ -26,13 +26,17 @@ export const Button: FC<PropsWithChildren<Props>> = ({
 
     return (
         <Component
-            className={clsx(css.button, className, css[type], css[size], { [css.disabled]: disabled })}
+            className={clsx(
+                css.button,
+                className,
+                css[type],
+                css[size],
+                css[`rounded-${rounded}`],
+                { [css.disabled]: disabled }
+            )}
             {...(href ? { href } : { disabled, onClick })}
         >
-            <span className={css.buttonText} data-title={children}>
-                {children}
-            </span>
-            {icon && <span className={css.buttonIcon}>{icon}</span>}
+            {children}
         </Component>
     );
 }

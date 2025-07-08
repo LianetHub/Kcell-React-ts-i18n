@@ -1,0 +1,68 @@
+.promo {
+	padding: 2.5rem 0;
+	&Container {
+	}
+	&Slider {
+		border-radius: 1rem;
+		background: linear-gradient(136deg, #5c46e6 0%, #5b2a97 100%);
+		color: $white;
+	}
+	&Card {
+		padding: 2.75rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	&CardMain {
+	}
+	&CardTitle {
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 120%;
+	}
+	&CardSubtitle {
+		color: rgba(255, 255, 255, 0.48);
+		margin-top: 0.5rem;
+		font-size: 1rem;
+		line-height: 150%;
+		letter-spacing: 0.03em;
+	}
+	&CardBtn {
+		margin-top: 2.5rem;
+	}
+	&CardImage {
+		height: 17rem;
+		& img {
+			max-height: 100%;
+		}
+	}
+	&SliderFooter {
+		display: flex;
+		justify-content: space-between;
+	}
+	&SliderControls {
+		display: flex;
+	}
+	&SliderPrev,
+	&SliderNext {
+		&:global(.swiper-button-prev),
+		&:global(.swiper-button-next) {
+			width: 2.75rem;
+			height: 2.75rem;
+			background: $white;
+			color: $black;
+			border-radius: 50%;
+			position: static;
+			inset: auto;
+			margin: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	&SliderPagination {
+		&:global(.swiper-pagination) {
+			position: static;
+			inset: auto;
+		}
+	}
+}

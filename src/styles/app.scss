@@ -36,26 +36,21 @@ body {
 .container {
 	margin: 0 auto;
 	max-width: 100%;
-	padding: 0 0.75rem;
+	padding: 0 1rem;
 
 	@media (min-width: $md4) {
-		max-width: rem(640);
+		max-width: rem(540);
 		box-sizing: content-box;
-		padding: 0 2.5rem;
 	}
-
+	@media (min-width: $md3) {
+		max-width: rem(720);
+	}
 	@media (min-width: $md2) {
-		max-width: rem(1216);
-		padding: 0 2rem;
+		max-width: rem(960);
 	}
 
 	@media (min-width: $md1) {
-		padding: 0 2.5rem;
 		max-width: rem($maxWidthContainer);
-	}
-
-	&.container--fluid {
-		max-width: rem(1920);
 	}
 }
 
