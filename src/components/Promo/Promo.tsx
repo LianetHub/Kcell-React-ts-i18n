@@ -1,6 +1,6 @@
-import { FC, useRef } from 'react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 
 import 'swiper/scss';
@@ -35,13 +35,6 @@ const promoSlidesData = [
 export const Promo: FC = () => {
     const { t } = useTranslation();
 
-    const prevRef = useRef<HTMLButtonElement>(null);
-    const nextRef = useRef<HTMLButtonElement>(null);
-    const paginationRef = useRef<HTMLDivElement>(null);
-
-
-
-
     return (
         <section className={css.promo}>
             <div className={clsx(css.promoContainer, 'container')}>
@@ -50,11 +43,11 @@ export const Promo: FC = () => {
                     modules={[Pagination, Navigation]}
                     slidesPerView={1}
                     navigation={{
-                        prevEl: prevRef.current,
-                        nextEl: nextRef.current,
+                        nextEl: `.${css.promoSliderNext}`,
+                        prevEl: `.${css.promoSliderPrev}`,
                     }}
                     pagination={{
-                        el: paginationRef.current!,
+                        el: `.${css.promoSliderPagination}`,
                         clickable: true,
                     }}
                 >
@@ -86,19 +79,13 @@ export const Promo: FC = () => {
                     <div className={css.promoSliderFooter}>
                         <div
                             className={clsx(css.promoSliderPagination, 'swiper-pagination')}
-                            ref={paginationRef}
+
                         ></div>
                         <div className={css.promoSliderControls}>
-                            <button
-                                ref={prevRef}
-                                className={clsx(css.promoSliderPrev, 'swiper-button-prev')}
-                            >
+                            <button className={clsx(css.promoSliderPrev, 'swiper-button-prev')}>
                                 <ArrowPrev />
                             </button>
-                            <button
-                                ref={nextRef}
-                                className={clsx(css.promoSliderNext, 'swiper-button-next')}
-                            >
+                            <button className={clsx(css.promoSliderNext, 'swiper-button-next')}>
                                 <ArrowNext />
                             </button>
                         </div>
