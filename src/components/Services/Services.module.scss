@@ -1,0 +1,62 @@
+.services {
+	padding: 2.5rem 0;
+
+	&Container {
+	}
+
+	&Title {
+	}
+
+	&Tabs {
+		margin-top: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&TabsBtn {
+		min-width: 15rem;
+	}
+
+	&List {
+		margin-top: 1rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	&Card {
+		border-radius: 1rem;
+		background: #f5f6fa;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&CardTitle {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	&CardSubtitle {
+		margin-top: rem(10);
+		font-size: 1rem;
+		font-weight: 500;
+		padding-bottom: 1.25rem;
+		border-bottom: rem(1) solid #e6e7ec;
+	}
+
+	&CardDescription {
+		margin-top: 1.25rem;
+		color: rgba(17, 17, 20, 0.64);
+		font-size: 1rem;
+		line-height: 150%;
+		margin-bottom: auto;
+	}
+
+	&CardBtn {
+		margin-top: 2rem;
+		align-self: flex-start;
+	}
+}

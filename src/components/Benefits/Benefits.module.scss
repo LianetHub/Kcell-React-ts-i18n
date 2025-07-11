@@ -15,29 +15,5 @@
 	}
 
 	&ListItem {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		border-radius: 1rem;
-		background: $grey;
-		padding: 1rem;
-	}
-
-	&Icon {
-		width: 3.5rem;
-		height: 3.5rem;
-		flex-shrink: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 50%;
-		background: $white;
-	}
-
-	&Text {
-		font-size: 1rem;
-		font-weight: 500;
-		line-height: 150%;
-		letter-spacing: 0.02rem;
 	}
 }

@@ -6,6 +6,7 @@ import Gear from 'src/icons/Gear.svg?react';
 
 import css from './Benefits.module.scss';
 import clsx from 'clsx';
+import { Card } from '@ui/Card';
 
 type BenefitKey =
     | 'marketingSolutionsPage.advantages.wideRangeOfServices'
@@ -38,14 +39,13 @@ export const Benefits: FC = () => {
                 </h2>
                 <ul className={css.benefitsList}>
                     {benefitsData.map(({ Icon, textKey }, index) => (
-                        <li className={css.benefitsListItem} key={index}>
-                            <div className={css.benefitsIcon}>
-                                <Icon />
-                            </div>
-                            <div className={css.benefitsText}>
-                                {t(textKey)}
-                            </div>
-                        </li>
+                        <Card
+                            className={css.benefitsListItem}
+                            key={index}
+                            icon={<Icon />}
+                            text={t(textKey)}
+                        >
+                        </Card>
                     ))}
                 </ul>
             </div>

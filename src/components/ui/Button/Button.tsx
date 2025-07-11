@@ -1,42 +1,56 @@
 import { FC, PropsWithChildren } from "react";
 import css from './Button.module.scss';
 import clsx from "clsx";
+import { Link } from 'react-router-dom';
 
 interface Props {
     className?: string;
-    type?: 'primary' | 'white';
+    color?: 'primary' | 'white' | "grey";
     size?: 'small' | 'medium';
     rounded?: "small" | "default";
     disabled?: boolean;
     onClick?: () => void;
-    href?: string;
+    to?: string;
 }
 
 export const Button: FC<PropsWithChildren<Props>> = ({
     className,
-    type = 'primary',
+    color = 'primary',
     size = 'small',
     rounded = 'default',
     disabled = false,
     onClick,
-    href,
+    to,
     children
 }) => {
-    const Component = href ? 'a' : 'button';
+    const classNames = clsx(
+        css.button,
+        className,
+        css[color],
+        css[size],
+        css[`rounded-${rounded}`],
+        { [css.disabled]: disabled }
+    );
+
+    if (to) {
+        return (
+            <Link
+                to={to}
+                className={classNames}
+                onClick={disabled ? (e) => e.preventDefault() : undefined}
+            >
+                {children}
+            </Link>
+        );
+    }
 
     return (
-        <Component
-            className={clsx(
-                css.button,
-                className,
-                css[type],
-                css[size],
-                css[`rounded-${rounded}`],
-                { [css.disabled]: disabled }
-            )}
-            {...(href ? { href } : { disabled, onClick })}
+        <button
+            className={classNames}
+            disabled={disabled}
+            onClick={onClick}
         >
             {children}
-        </Component>
+        </button>
     );
-}
+};

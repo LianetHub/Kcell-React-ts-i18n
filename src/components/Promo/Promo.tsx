@@ -63,7 +63,7 @@ export const Promo: FC = () => {
                                     </p>
                                     <Button
                                         className={css.promoCardBtn}
-                                        type='white'
+                                        color='white'
                                         rounded='small'
                                     >
                                         {t('common.readMore')}

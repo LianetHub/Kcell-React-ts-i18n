@@ -1,2 +1,3 @@
-export { Benefits } from "./Benefits";
 export { Promo } from "./Promo";
+export { Benefits } from "./Benefits";
+export { Services } from "./Services";
