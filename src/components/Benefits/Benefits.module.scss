@@ -1,73 +1,43 @@
-.promo {
+.benefits {
 	padding: 2.5rem 0;
+
 	&Container {
 	}
-	&Slider {
-		border-radius: 1rem;
-		background: linear-gradient(136deg, #5c46e6 0%, #5b2a97 100%);
-		color: $white;
-	}
-	&Card {
-		padding: 2.75rem 7.66rem 3.75rem 2.75rem;
-		display: flex;
-		justify-content: space-between;
-	}
-	&CardMain {
-	}
-	&CardTitle {
-		font-size: 2.5rem;
-		font-weight: 700;
-		line-height: 120%;
-	}
-	&CardSubtitle {
-		color: rgba(255, 255, 255, 0.48);
-		margin-top: 0.5rem;
-		font-size: 1rem;
-		line-height: 150%;
-		letter-spacing: 0.03em;
-	}
-	&CardBtn {
-		margin-top: 2.5rem;
-	}
-	&CardImage {
-		margin-top: 1.44rem;
-		height: 17rem;
-		& img {
-			max-height: 100%;
-		}
-	}
-	&SliderFooter {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		padding: 0 2.25rem 2.75rem 2.75rem;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
-	&SliderControls {
-		display: flex;
-		gap: 0.5rem;
-	}
-	&SliderPrev,
-	&SliderNext {
-		svg {
-			width: 1.75rem;
-			height: 1.75rem;
-		}
-	}
-	&SliderPagination {
-		:global {
-			.swiper-pagination-bullet {
-				background-color: rgba(255, 255, 255, 0.5);
-				opacity: 0.5;
-			}
 
-			.swiper-pagination-bullet-active {
-				opacity: 1;
-				background-color: #fff;
-			}
-		}
+	&Title {
+	}
+
+	&List {
+		margin-top: 1.5rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+
+	&ListItem {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border-radius: 1rem;
+		background: $grey;
+		padding: 1rem;
+	}
+
+	&Icon {
+		width: 3.5rem;
+		height: 3.5rem;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background: $white;
+	}
+
+	&Text {
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 150%;
+		letter-spacing: 0.02rem;
 	}
 }
