@@ -1,0 +1,39 @@
+.offer {
+	padding: 2.5rem 0;
+
+	&Container {
+	}
+
+	&Body {
+		border-radius: 1rem;
+		background: linear-gradient(136deg, #5c46e6 0%, #5b2a97 100%);
+		padding: 4rem;
+		color: $white;
+	}
+
+	&Title {
+		text-align: center;
+	}
+
+	&Form {
+		max-width: 50rem;
+		margin: 2rem auto 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	&FormFields {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		width: 100%;
+	}
+
+	&FormFields {
+	}
+
+	&FormBtn {
+	}
+}

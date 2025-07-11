@@ -1,0 +1,45 @@
+.field {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	opacity: 0.64;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.0175rem;
+	margin-bottom: 0.5em;
+	display: block;
+}
+
+.input {
+	text-overflow: ellipsis;
+	transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+	width: 100%;
+	color: $black;
+	background: $white;
+	border-radius: 0.25rem;
+	line-height: 1;
+	padding: 1.125rem 1rem;
+	border-radius: 0.5rem;
+
+	&::placeholder {
+		opacity: 0.64;
+		color: inherit;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $accent;
+	}
+
+	&::placeholder {
+		color: #606060;
+		opacity: 1;
+	}
+
+	&:disabled {
+		background: #dfe0e1;
+		border-color: #dfe0e1;
+	}
+}

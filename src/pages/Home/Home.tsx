@@ -1,5 +1,5 @@
 
-import { Promo, Benefits, Services } from "src/components";
+import { Promo, Benefits, Services, Offer } from "src/components";
 
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
             <Promo />
             <Benefits />
             <Services />
+            <Offer />
         </>
     )
 }
