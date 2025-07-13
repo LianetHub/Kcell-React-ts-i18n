@@ -1,0 +1,9 @@
+export { Home } from "./Home/Home";
+export { DigitalResearch } from "./DigitalResearch/DigitalResearch";
+export { BusinessLook } from "./BusinessLook/BusinessLook";
+export { Scoring } from "./Scoring/Scoring";
+export { Verification } from "./Verification/Verification";
+export { DigitalTarget } from "./DigitalTarget/DigitalTarget";
+export { KcellContact } from "./KcellContact/KcellContact";
+export { LeadGeneration } from "./LeadGeneration/LeadGeneration";
+export { TargetCall } from "./TargetCall/TargetCall";
