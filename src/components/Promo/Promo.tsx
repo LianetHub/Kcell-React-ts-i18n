@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 
 import css from './Promo.module.scss';
@@ -9,19 +9,22 @@ import { Button } from '@ui/Button';
 
 import ArrowNext from 'src/icons/ArrowNext.svg?react';
 import ArrowPrev from 'src/icons/ArrowPrev.svg?react';
+import { TabKey } from '../Services';
 
 interface PromoSlide {
     title: string;
     description?: string;
     image: string;
     link?: string;
+    targetTab?: TabKey
 }
 
 interface PromoProps {
     slides: PromoSlide[];
+    onButtonClick?: (tabKey: TabKey) => void;
 }
 
-export const Promo: FC<PromoProps> = ({ slides }) => {
+export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
     const { t } = useTranslation();
 
     return (
@@ -29,7 +32,7 @@ export const Promo: FC<PromoProps> = ({ slides }) => {
             <div className={clsx(css.promoContainer, 'container')}>
                 <Swiper
                     className={css.promoSlider}
-                    modules={[Pagination, Navigation]}
+                    modules={[Pagination, Navigation, Autoplay]}
                     slidesPerView={1}
                     autoplay={{ delay: 5000 }}
                     watchOverflow={true}
@@ -60,6 +63,10 @@ export const Promo: FC<PromoProps> = ({ slides }) => {
                                             className={css.promoCardBtn}
                                             color="white"
                                             rounded="small"
+                                            onClick={slide.targetTab && onButtonClick
+                                                ? () => onButtonClick(slide.targetTab!)
+                                                : undefined
+                                            }
                                         >
                                             {t('common.readMore')}
                                         </Button>

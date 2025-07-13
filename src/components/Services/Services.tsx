@@ -1,8 +1,6 @@
-import { FC, useState } from 'react';
+import { FC, forwardRef } from 'react'; // Removed useState, useEffect
 import { useTranslation } from 'react-i18next';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import css from './Services.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
@@ -17,33 +15,37 @@ type ServiceKey =
     | 'digitalResearch'
     | 'businessLook';
 
-type TabKey = 'btn1' | 'btn2' | 'btn3';
+export type TabKey = 'marketing-solutions' | 'financial-services' | 'other';
+
+interface ServicesProps {
+    initialTab?: TabKey;
+    onTabChange: (tabKey: TabKey) => void;
+}
 
 const tabs = [
-    { key: 'btn1', labelKey: 'services.tabs.btn1' },
-    { key: 'btn2', labelKey: 'services.tabs.btn2' },
-    { key: 'btn3', labelKey: 'services.tabs.btn3' },
+    { key: 'marketing-solutions', labelKey: 'services.tabs.btn1' },
+    { key: 'financial-services', labelKey: 'services.tabs.btn2' },
+    { key: 'other', labelKey: 'services.tabs.btn3' },
 ] as const;
 
 const services: { key: ServiceKey; link: string; tab: TabKey }[] = [
-    { key: 'kcellContact', link: '/kcell-contact', tab: 'btn1' },
-    { key: 'leadGeneration', link: '/lead-generation', tab: 'btn1' },
-    { key: 'digitalTarget', link: '/digital-target', tab: 'btn1' },
-    { key: 'targetCall', link: '/target-call', tab: 'btn1' },
-    { key: 'scoring', link: '/scoring', tab: 'btn2' },
-    { key: 'verification', link: '/verification', tab: 'btn2' },
-    { key: 'digitalResearch', link: '/digital-research', tab: 'btn3' },
-    { key: 'businessLook', link: '/business-look', tab: 'btn3' },
+    { key: 'kcellContact', link: '/kcell-contact', tab: 'marketing-solutions' },
+    { key: 'leadGeneration', link: '/lead-generation', tab: 'marketing-solutions' },
+    { key: 'digitalTarget', link: '/digital-target', tab: 'marketing-solutions' },
+    { key: 'targetCall', link: '/target-call', tab: 'marketing-solutions' },
+    { key: 'scoring', link: '/scoring', tab: 'financial-services' },
+    { key: 'verification', link: '/verification', tab: 'financial-services' },
+    { key: 'digitalResearch', link: '/digital-research', tab: 'other' },
+    { key: 'businessLook', link: '/business-look', tab: 'other' },
 ];
 
-export const Services: FC = () => {
+export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps>(({ initialTab, onTabChange }, ref) => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState<TabKey>('btn1');
 
-    const filteredServices = services.filter(service => service.tab === activeTab);
+    const activeTab = initialTab || 'marketing-solutions';
 
     return (
-        <section className={css.services}>
+        <section id='services' className={css.services} ref={ref}>
             <div className={clsx(css.servicesContainer, 'container')}>
                 <h2 className={clsx(css.servicesTitle, 'title')}>
                     {t('common.services')}
@@ -61,7 +63,7 @@ export const Services: FC = () => {
                                     [css.active]: activeTab === tab.key
                                 })}
                                 color={activeTab === tab.key ? 'primary' : 'grey'}
-                                onClick={() => setActiveTab(tab.key)}
+                                onClick={() => onTabChange(tab.key)}
                             >
                                 {t(tab.labelKey)}
                             </Button>
@@ -69,30 +71,39 @@ export const Services: FC = () => {
                     ))}
                 </Swiper>
 
-                <ul className={css.servicesList}>
-                    {filteredServices.map(({ key, link }) => (
-                        <li className={css.servicesCard} key={key}>
-                            <div className={css.servicesCardTitle}>
-                                {t(`services.list.${key}.title`)}
-                            </div>
-                            <div className={css.servicesCardSubtitle}>
-                                {t(`services.list.${key}.subtitle`)}
-                            </div>
-                            <div className={css.servicesCardDescription}>
-                                {t(`services.list.${key}.description`)}
-                            </div>
-                            <Button
-                                className={css.servicesCardBtn}
-                                to={link}
-                                color="white"
-                                rounded="small"
-                            >
-                                {t('common.readMore')}
-                            </Button>
-                        </li>
-                    ))}
-                </ul>
+                {tabs.map((tab) => (
+                    <ul
+                        key={tab.key}
+                        className={clsx(css.servicesList, {
+                            [css.hidden]: activeTab !== tab.key
+                        })}
+                    >
+                        {services
+                            .filter(service => service.tab === tab.key)
+                            .map(({ key, link }) => (
+                                <li className={css.servicesCard} key={key}>
+                                    <div className={css.servicesCardTitle}>
+                                        {t(`services.list.${key}.title`)}
+                                    </div>
+                                    <div className={css.servicesCardSubtitle}>
+                                        {t(`services.list.${key}.subtitle`)}
+                                    </div>
+                                    <div className={css.servicesCardDescription}>
+                                        {t(`services.list.${key}.description`)}
+                                    </div>
+                                    <Button
+                                        className={css.servicesCardBtn}
+                                        to={link}
+                                        color="white"
+                                        rounded="small"
+                                    >
+                                        {t('common.readMore')}
+                                    </Button>
+                                </li>
+                            ))}
+                    </ul>
+                ))}
             </div>
         </section>
     );
-};
+});
