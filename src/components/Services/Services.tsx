@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import css from './Services.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
+import { ServiceCard } from './ServiceCard';
 
 type ServiceKey =
     | 'kcellContact'
@@ -81,25 +82,13 @@ export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps
                         {services
                             .filter(service => service.tab === tab.key)
                             .map(({ key, link }) => (
-                                <li className={css.servicesCard} key={key}>
-                                    <div className={css.servicesCardTitle}>
-                                        {t(`services.list.${key}.title`)}
-                                    </div>
-                                    <div className={css.servicesCardSubtitle}>
-                                        {t(`services.list.${key}.subtitle`)}
-                                    </div>
-                                    <div className={css.servicesCardDescription}>
-                                        {t(`services.list.${key}.description`)}
-                                    </div>
-                                    <Button
-                                        className={css.servicesCardBtn}
-                                        to={link}
-                                        color="white"
-                                        rounded="small"
-                                    >
-                                        {t('common.readMore')}
-                                    </Button>
-                                </li>
+                                <ServiceCard
+                                    key={key}
+                                    title={t(`services.list.${key}.title`)}
+                                    subtitle={t(`services.list.${key}.subtitle`)}
+                                    description={t(`services.list.${key}.description`)}
+                                    link={link}
+                                />
                             ))}
                     </ul>
                 ))}
