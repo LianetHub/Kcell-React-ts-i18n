@@ -3,11 +3,15 @@ import Image1 from 'src/assets/images/promo/01.png';
 import Image2 from 'src/assets/images/promo/02.png';
 import Image3 from 'src/assets/images/promo/03.png';
 import { useTranslation } from 'react-i18next';
-import { useState } from "react";
+import { useState, FC } from "react";
 import { TabKey } from "src/components/Services";
+import Tarriff from 'src/icons/Tarriff.svg?react';
+import Wifi from 'src/icons/Wifi.svg?react';
+import Gear from 'src/icons/Gear.svg?react';
+import { BenefitItem } from "src/components/Benefits";
 
 
-export const Home = () => {
+export const Home: FC = () => {
     const { t } = useTranslation();
 
     const [currentTab, setCurrentTab] = useState<TabKey>("marketing-solutions");
@@ -36,15 +40,34 @@ export const Home = () => {
         },
     ];
 
+    const benefitsData: BenefitItem[] = [
+        {
+            Icon: Tarriff,
+            text: t('marketingSolutionsPage.advantages.wideRangeOfServices'),
+        },
+        {
+            Icon: Wifi,
+            text: t('marketingSolutionsPage.advantages.highSpeedAndCoverage'),
+        },
+        {
+            Icon: Gear,
+            text: t('marketingSolutionsPage.advantages.modernTechnologies'),
+        },
+    ];
+
     const handleTabChange = (tabKey: TabKey) => {
         setCurrentTab(tabKey);
 
     };
 
+
     return (
         <>
             <Promo slides={promoSlidesData} onButtonClick={handleTabChange} />
-            <Benefits />
+            <Benefits
+                title={t('common.ourAdvantages')}
+                benefitsData={benefitsData}
+            />
             <Services
                 showTabs={true}
                 initialTab={currentTab}

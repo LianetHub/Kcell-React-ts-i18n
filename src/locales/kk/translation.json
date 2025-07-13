@@ -113,7 +113,7 @@
         "serviceContact": "Қызмет:",
         "leaveRequest": "Өтініш қалдыру"
     },
-    "businessBigDataPage": {
+    "internalPage": {
         "heroSection": {
             "title": "Бизнестік көзқарас",
             "description": "Kcell/Activ абоненттерінің дербестендірілмеген деректері негізінде көрсетілген критерийлер бойынша аналитикалық есептер."

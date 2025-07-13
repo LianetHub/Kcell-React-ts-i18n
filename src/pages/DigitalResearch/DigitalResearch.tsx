@@ -18,6 +18,7 @@ export function DigitalResearch() {
         <>
             <Promo slides={promoSlidesData} />
             <Offer />
+
             <Services
                 title={t("common.otherOffers")}
                 excludeServiceKey={"digitalResearch"}

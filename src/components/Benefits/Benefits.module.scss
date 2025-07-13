@@ -10,6 +10,27 @@
 	&Title {
 	}
 
+	&Columns {
+		display: grid;
+		gap: 1.25rem;
+		@media (min-width: $md2) {
+			gap: 3rem;
+			grid-template-columns: repeat(2, 1fr);
+			.benefitsTitle {
+				text-align: left;
+			}
+			.benefitsList {
+				grid-template-columns: 1fr;
+			}
+			.benefitsListItem {
+				min-height: rem(104);
+				&:last-child {
+					grid-column: auto;
+				}
+			}
+		}
+	}
+
 	&List {
 		display: grid;
 		gap: 0.5rem;

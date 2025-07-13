@@ -113,7 +113,7 @@
         "serviceContact": "Сервис:",
         "leaveRequest": "Оставить заявку"
     },
-    "businessBigDataPage": {
+    "internalPage": {
         "heroSection": {
             "title": "Бизнес взгляд",
             "description": "Аналитические отчёты на основе обезличенных данных абонентов Kcell/Activ по заданным критериям."
