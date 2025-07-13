@@ -1,5 +1,5 @@
-export default function BusinessLook() {
 
+export const BusinessLook = () => {
     return (
         <>
             BusinessLook

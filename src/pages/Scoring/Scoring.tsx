@@ -1,4 +1,5 @@
-export default function Scoring() {
+
+export const Scoring = () => {
 
     return (
         <>

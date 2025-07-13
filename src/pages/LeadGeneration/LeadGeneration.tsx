@@ -1,5 +1,4 @@
-export default function LeadGeneration() {
-
+export const LeadGeneration = () => {
     return (
         <>
             Lead generation

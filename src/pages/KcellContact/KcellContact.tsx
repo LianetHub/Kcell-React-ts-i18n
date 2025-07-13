@@ -1,5 +1,5 @@
-export default function KcellContact() {
 
+export const KcellContact = () => {
     return (
         <>
             Kcell Contact

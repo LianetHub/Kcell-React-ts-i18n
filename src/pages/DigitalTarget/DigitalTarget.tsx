@@ -1,4 +1,4 @@
-export default function DigitalTarget() {
+export const DigitalTarget = () => {
 
     return (
         <>

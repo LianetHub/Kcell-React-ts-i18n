@@ -1,5 +1,5 @@
-export default function TargetCall() {
 
+export const TargetCall = () => {
     return (
         <>
             TargetCall

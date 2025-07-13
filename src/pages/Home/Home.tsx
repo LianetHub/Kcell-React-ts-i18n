@@ -2,7 +2,7 @@
 import { Promo, Benefits, Services, Offer } from "src/components";
 
 
-export default function Home() {
+export const Home = () => {
 
     return (
         <>

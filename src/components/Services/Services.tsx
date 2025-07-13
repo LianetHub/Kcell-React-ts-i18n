@@ -5,8 +5,17 @@ import css from './Services.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
 
+type ServiceKey =
+    | 'kcellContact'
+    | 'leadGeneration'
+    | 'digitalTarget'
+    | 'targetCall'
+    | 'scoring'
+    | 'verification'
+    | 'digitalResearch'
+    | 'businessLook';
 
-type ServiceKey = 'kcellContact' | 'leadGeneration' | 'digitalTarget' | 'targetCall';
+type TabKey = 'btn1' | 'btn2' | 'btn3';
 
 const tabs = [
     { key: 'btn1', labelKey: 'marketingSolutionsPage.services.tabs.btn1' },
@@ -14,17 +23,22 @@ const tabs = [
     { key: 'btn3', labelKey: 'marketingSolutionsPage.services.tabs.btn3' },
 ] as const;
 
-
-const services: { key: ServiceKey; link: string }[] = [
-    { key: 'kcellContact', link: '/kcell-contact' },
-    { key: 'leadGeneration', link: '/lead-generation' },
-    { key: 'digitalTarget', link: '/digital-target' },
-    { key: 'targetCall', link: '/target-call' },
+const services: { key: ServiceKey; link: string; tab: TabKey }[] = [
+    { key: 'kcellContact', link: '/kcell-contact', tab: 'btn1' },
+    { key: 'leadGeneration', link: '/lead-generation', tab: 'btn1' },
+    { key: 'digitalTarget', link: '/digital-target', tab: 'btn1' },
+    { key: 'targetCall', link: '/target-call', tab: 'btn1' },
+    { key: 'scoring', link: '/scoring', tab: 'btn2' },
+    { key: 'verification', link: '/verification', tab: 'btn2' },
+    { key: 'digitalResearch', link: '/digital-research', tab: 'btn3' },
+    { key: 'businessLook', link: '/business-look', tab: 'btn3' },
 ];
 
 export const Services: FC = () => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState<string>(tabs[0].key);
+    const [activeTab, setActiveTab] = useState<TabKey>('btn1');
+
+    const filteredServices = services.filter(service => service.tab === activeTab);
 
     return (
         <section className={css.services}>
@@ -32,6 +46,7 @@ export const Services: FC = () => {
                 <h2 className={clsx(css.servicesTitle, 'title')}>
                     {t('common.services')}
                 </h2>
+
                 <div className={css.servicesTabs}>
                     {tabs.map((tab) => (
                         <Button
@@ -44,8 +59,9 @@ export const Services: FC = () => {
                         </Button>
                     ))}
                 </div>
+
                 <ul className={css.servicesList}>
-                    {services.map(({ key, link }) => (
+                    {filteredServices.map(({ key, link }) => (
                         <li className={css.servicesCard} key={key}>
                             <div className={css.servicesCardTitle}>
                                 {t(`marketingSolutionsPage.services.list.${key}.title`)}
@@ -59,8 +75,8 @@ export const Services: FC = () => {
                             <Button
                                 className={css.servicesCardBtn}
                                 to={link}
-                                color='white'
-                                rounded='small'
+                                color="white"
+                                rounded="small"
                             >
                                 {t('common.readMore')}
                             </Button>

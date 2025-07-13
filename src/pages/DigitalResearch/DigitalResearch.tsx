@@ -1,4 +1,4 @@
-export default function DigitalResearch() {
+export function DigitalResearch() {
 
     return (
         <>

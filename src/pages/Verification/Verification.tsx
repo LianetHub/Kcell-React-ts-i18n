@@ -1,5 +1,4 @@
-export default function Verification() {
-
+export const Verification = () => {
     return (
         <>
             Verification
