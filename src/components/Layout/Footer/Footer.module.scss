@@ -1,17 +1,50 @@
 .footer {
+	padding: 2.5rem 0 0;
+
 	&Container {
 	}
 
 	&Content {
+		border: rem(1) solid $line;
+		border-bottom: 0;
+		padding-bottom: 4rem;
 	}
 
-	.headerLogo {
+	&Header {
+		padding: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&Logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.125rem;
+		font-weight: 500;
+
+		&Icon {
+			path {
+				fill: $black;
+			}
+		}
+		&:hover {
+		}
 	}
 
 	&Menu {
+		padding-right: 10.5rem;
 	}
 
 	&MenuList {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 125%;
+		letter-spacing: 0.02rem;
 	}
 
 	&MenuItem {
@@ -21,56 +54,143 @@
 	}
 
 	&Toggler {
+		width: 1.5rem;
+		height: 1.5rem;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& svg {
+			width: 100%;
+			height: 100%;
+		}
+		&.active {
+			transform: rotate(180deg);
+		}
 	}
 
 	&Body {
+		border-top: rem(1) solid $line;
 	}
 
 	&Columns {
+		padding: 2rem 1.5rem;
+		display: grid;
+		gap: 1.75rem;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	&Column {
 	}
 
 	&ColumnCaption {
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 142.857%;
+		letter-spacing: 0.0175rem;
 	}
 
 	&ColumnList {
+		margin-top: 1rem;
+		color: rgba(10, 14, 31, 0.48);
+		font-size: 0.875rem;
+		line-height: 142.857%;
+		letter-spacing: 0.0175rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
 	}
 
 	&ColumnItem {
 	}
 
 	&ColumnLink {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
 	}
 
 	&ColumnText {
 	}
 
 	&ColumnContacts {
+		margin-top: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		color: $black;
 	}
 
 	&ColumnContact {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
 	}
 
 	&License {
+		border-top: rem(1) solid $line;
+		color: rgba(10, 14, 31, 0.48);
+		text-align: center;
+		padding: 1rem 2.5rem;
+		font-size: 0.75rem;
+		line-height: 133.333%;
+		letter-spacing: 0.02rem;
 	}
 
 	&Bottom {
+		border-top: rem(1) solid $line;
+		border-bottom: rem(1) solid $line;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem 1.5rem;
+		color: rgba(10, 14, 31, 0.48);
+		font-size: 0.75rem;
+		line-height: 133.333%;
+		letter-spacing: 0.02rem;
 	}
 
 	&Copy {
 	}
 
 	&Policies {
+		display: flex;
+		gap: 1rem;
+		padding-left: 3.5rem;
 	}
 
 	&PoliciesLink {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $black;
+			}
+		}
 	}
 
 	&Service {
 	}
 
 	&ServicePhone {
+		margin-left: 0.5rem;
+		color: $black;
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 133.333%;
+		letter-spacing: 0.015rem;
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
 	}
 }
