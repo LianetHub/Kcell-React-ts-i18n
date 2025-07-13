@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 
-
-
 import css from './Promo.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
