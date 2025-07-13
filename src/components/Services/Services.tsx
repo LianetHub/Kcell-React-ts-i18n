@@ -18,9 +18,9 @@ type ServiceKey =
 type TabKey = 'btn1' | 'btn2' | 'btn3';
 
 const tabs = [
-    { key: 'btn1', labelKey: 'marketingSolutionsPage.services.tabs.btn1' },
-    { key: 'btn2', labelKey: 'marketingSolutionsPage.services.tabs.btn2' },
-    { key: 'btn3', labelKey: 'marketingSolutionsPage.services.tabs.btn3' },
+    { key: 'btn1', labelKey: 'services.tabs.btn1' },
+    { key: 'btn2', labelKey: 'services.tabs.btn2' },
+    { key: 'btn3', labelKey: 'services.tabs.btn3' },
 ] as const;
 
 const services: { key: ServiceKey; link: string; tab: TabKey }[] = [
@@ -64,13 +64,13 @@ export const Services: FC = () => {
                     {filteredServices.map(({ key, link }) => (
                         <li className={css.servicesCard} key={key}>
                             <div className={css.servicesCardTitle}>
-                                {t(`marketingSolutionsPage.services.list.${key}.title`)}
+                                {t(`services.list.${key}.title`)}
                             </div>
                             <div className={css.servicesCardSubtitle}>
-                                {t(`marketingSolutionsPage.services.list.${key}.subtitle`)}
+                                {t(`services.list.${key}.subtitle`)}
                             </div>
                             <div className={css.servicesCardDescription}>
-                                {t(`marketingSolutionsPage.services.list.${key}.description`)}
+                                {t(`services.list.${key}.description`)}
                             </div>
                             <Button
                                 className={css.servicesCardBtn}

@@ -14,7 +14,7 @@ interface PromoSlide {
     title: string;
     description?: string;
     image: string;
-    link: string;
+    link?: string;
 }
 
 interface PromoProps {
@@ -54,14 +54,16 @@ export const Promo: FC<PromoProps> = ({ slides }) => {
                                             {slide.description}
                                         </p>
                                     )}
-                                    <Button
-                                        to={slide.link}
-                                        className={css.promoCardBtn}
-                                        color="white"
-                                        rounded="small"
-                                    >
-                                        {t('common.readMore')}
-                                    </Button>
+                                    {slide.link && (
+                                        <Button
+                                            to={slide.link}
+                                            className={css.promoCardBtn}
+                                            color="white"
+                                            rounded="small"
+                                        >
+                                            {t('common.readMore')}
+                                        </Button>
+                                    )}
                                 </div>
                                 <div className={css.promoCardImage}>
                                     <img src={slide.image} alt={slide.title} />

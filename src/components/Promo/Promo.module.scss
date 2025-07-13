@@ -28,6 +28,9 @@
 		font-size: 1rem;
 		line-height: 150%;
 		letter-spacing: 0.03em;
+		&::first-letter {
+			text-transform: uppercase;
+		}
 	}
 	&CardBtn {
 		margin-top: 2.5rem;
