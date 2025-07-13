@@ -1,61 +1,105 @@
 .promo {
-	padding: 2.5rem 0;
+	padding: 1rem 0 0.625rem;
+	@media (min-width: $md3) {
+		padding: 2.5rem 0;
+	}
+
 	&Container {
 	}
+
 	&Slider {
 		border-radius: 1rem;
 		background: linear-gradient(136deg, #5c46e6 0%, #5b2a97 100%);
 		color: $white;
 	}
+
 	&Card {
-		padding: 2.75rem 7.66rem 3.75rem 2.75rem;
 		display: flex;
-		justify-content: space-between;
+		padding: 1.5rem 1.12rem 2rem 1.5rem;
+		flex-direction: column;
+		@media (min-width: $md4) {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2.75rem 2.75rem 3.75rem;
+		}
+		@media (min-width: $md2) {
+			padding: 2.75rem 7.66rem 3.75rem 2.75rem;
+		}
 	}
+
 	&CardMain {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 	}
+
 	&CardTitle {
-		font-size: 2.5rem;
 		font-weight: 700;
-		line-height: 120%;
+		font-size: 1.75rem;
+		line-height: 128.571%;
+		@media (min-width: $md4) {
+			line-height: 120%;
+			font-size: 2.5rem;
+		}
 	}
+
 	&CardSubtitle {
 		color: rgba(255, 255, 255, 0.48);
 		margin-top: 0.5rem;
 		font-size: 1rem;
 		line-height: 150%;
-		letter-spacing: 0.03em;
+		letter-spacing: 0.028em;
+		@media (min-width: $md4) {
+			letter-spacing: 0.03em;
+		}
 		&::first-letter {
 			text-transform: uppercase;
 		}
 	}
+
 	&CardBtn {
-		margin-top: 2.5rem;
+		margin-top: 2rem;
+		@media (min-width: $md4) {
+			margin-top: 2.5rem;
+		}
 	}
+
 	&CardImage {
 		margin-top: 1.44rem;
-		height: 17rem;
+		height: 10.5rem;
+		margin-left: auto;
+		margin-top: -3rem;
+		@media (min-width: $md4) {
+			margin-top: 0;
+			height: 17rem;
+		}
 		& img {
 			max-height: 100%;
 		}
 	}
+
 	&SliderFooter {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		padding: 0 2.25rem 2.75rem 2.75rem;
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		@media (min-width: $md4) {
+			padding: 0 2.25rem 2.75rem 2.75rem;
+		}
 	}
+
 	&SliderControls {
-		display: flex;
-		gap: 0.5rem;
+		display: none;
+		@media (min-width: $md4) {
+			display: flex;
+			gap: 0.5rem;
+		}
 	}
+
 	&SliderPrev,
 	&SliderNext {
 		svg {
@@ -63,6 +107,7 @@
 			height: 1.75rem;
 		}
 	}
+
 	&SliderPagination {
 		:global {
 			.swiper-pagination-bullet {

@@ -14,8 +14,13 @@
 	overflow: hidden;
 
 	&.medium {
-		font-size: 1rem;
-		letter-spacing: 0.02em;
+		letter-spacing: 0.0175rem;
+		line-height: 142.857%;
+		@media (min-width: $md4) {
+			line-height: 114.286%;
+			font-size: 1rem;
+			letter-spacing: 0.02em;
+		}
 	}
 
 	&.rounded-small {
@@ -32,10 +37,12 @@
 	&.primary {
 		color: $white;
 		background-color: $accent;
-
-		&:hover {
-			background-color: color.adjust($color: $accent, $lightness: -10%);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: color.adjust($color: $accent, $lightness: -10%);
+			}
 		}
+
 		&:active {
 			background-color: color.adjust($color: $accent, $lightness: -20%);
 		}
@@ -44,8 +51,10 @@
 	&.white {
 		color: $black;
 		background-color: $white;
-		&:hover {
-			background-color: color.adjust($color: $white, $lightness: -10%);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: color.adjust($color: $white, $lightness: -10%);
+			}
 		}
 		&:active {
 			background-color: color.adjust($color: $white, $lightness: -15%);
@@ -55,9 +64,13 @@
 	&.grey {
 		background: $grey;
 		color: $black;
-		&:hover {
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: color.adjust($color: $grey, $lightness: -10%);
+			}
 		}
 		&:active {
+			background-color: color.adjust($color: $grey, $lightness: -15%);
 		}
 	}
 

@@ -1,20 +1,29 @@
 .footer {
-	padding: 2.5rem 0 0;
+	padding: 0.625rem 0 1.5rem;
+	@media (min-width: $md4) {
+		padding: 2.5rem 0 0;
+	}
 
 	&Container {
 	}
 
 	&Content {
-		border: rem(1) solid $line;
-		border-bottom: 0;
-		padding-bottom: 4rem;
+		border-top: rem(1) solid $line;
+		@media (min-width: $md4) {
+			border: rem(1) solid $line;
+			border-bottom: 0;
+			padding-bottom: 4rem;
+		}
 	}
 
 	&Header {
-		padding: 1.5rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding: 1.5rem 0;
+		@media (min-width: $md4) {
+			padding: 1.5rem;
+		}
 	}
 
 	&Logo {
@@ -34,7 +43,13 @@
 	}
 
 	&Menu {
-		padding-right: 10.5rem;
+		display: none;
+		@media (min-width: $md3) {
+			display: block;
+		}
+		@media (min-width: $md2) {
+			padding-right: 10.5rem;
+		}
 	}
 
 	&MenuList {
@@ -60,12 +75,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: transform 0.3s ease;
 		& svg {
-			width: 100%;
-			height: 100%;
+			width: 90%;
+			height: 90%;
 		}
+		transform: rotate(180deg);
 		&.active {
-			transform: rotate(180deg);
+			transform: none;
 		}
 	}
 
@@ -74,13 +91,26 @@
 	}
 
 	&Columns {
-		padding: 2rem 1.5rem;
 		display: grid;
-		gap: 1.75rem;
-		grid-template-columns: repeat(4, 1fr);
+		padding: 1.5rem 0rem;
+		gap: 1rem;
+		@media (min-width: $md4) {
+			gap: 1.75rem;
+			padding: 2rem 1.5rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 
 	&Column {
+		&.onlyDesktop {
+			display: none;
+			@media (min-width: $md4) {
+				display: block;
+			}
+		}
 	}
 
 	&ColumnCaption {
@@ -88,11 +118,43 @@
 		font-weight: 500;
 		line-height: 142.857%;
 		letter-spacing: 0.0175rem;
+		opacity: 0.48;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&.active {
+			opacity: 1;
+			.footerColumnCaptionIcon {
+				transform: rotate(180deg);
+			}
+		}
+		@media (min-width: $md4) {
+			opacity: 1;
+		}
+	}
+
+	&ColumnCaptionIcon {
+		width: 1.5rem;
+		height: 1.5rem;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.3s ease;
+		@media (min-width: $md4) {
+			display: none;
+		}
+	}
+
+	&ColumnBody {
+		display: none;
+		@media (min-width: $md4) {
+			display: block !important;
+		}
 	}
 
 	&ColumnList {
 		margin-top: 1rem;
-		color: rgba(10, 14, 31, 0.48);
 		font-size: 0.875rem;
 		line-height: 142.857%;
 		letter-spacing: 0.0175rem;
@@ -100,6 +162,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 0.5rem;
+		color: rgba(10, 14, 31, 0.48);
 	}
 
 	&ColumnItem {
@@ -139,23 +202,32 @@
 		border-top: rem(1) solid $line;
 		color: rgba(10, 14, 31, 0.48);
 		text-align: center;
-		padding: 1rem 2.5rem;
 		font-size: 0.75rem;
 		line-height: 133.333%;
 		letter-spacing: 0.02rem;
+		padding: 1.5rem 0rem 0.5rem;
+		@media (min-width: $md4) {
+			padding: 1rem 2.5rem;
+		}
 	}
 
 	&Bottom {
-		border-top: rem(1) solid $line;
-		border-bottom: rem(1) solid $line;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		padding: 1rem 1.5rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+
 		color: rgba(10, 14, 31, 0.48);
 		font-size: 0.75rem;
 		line-height: 133.333%;
 		letter-spacing: 0.02rem;
+		@media (min-width: $md4) {
+			justify-content: space-between;
+			border-top: rem(1) solid $line;
+			border-bottom: rem(1) solid $line;
+			padding: 1rem 1.5rem;
+		}
 	}
 
 	&Copy {
@@ -164,7 +236,9 @@
 	&Policies {
 		display: flex;
 		gap: 1rem;
-		padding-left: 3.5rem;
+		@media (min-width: $md2) {
+			padding-left: 3.5rem;
+		}
 	}
 
 	&PoliciesLink {

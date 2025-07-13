@@ -1,5 +1,8 @@
 .benefits {
-	padding: 2.5rem 0;
+	padding: 0.625rem 0;
+	@media (min-width: $md3) {
+		padding: 2.5rem 0;
+	}
 
 	&Container {
 	}
@@ -8,12 +11,27 @@
 	}
 
 	&List {
-		margin-top: 1.5rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
+		gap: 0.5rem;
+		margin-top: 1rem;
+		@media (min-width: $md3) {
+			margin-top: 1.5rem;
+			gap: 1rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 
 	&ListItem {
+		&:last-child {
+			@media (min-width: $md3) {
+				grid-column: span 2;
+			}
+			@media (min-width: $md2) {
+				grid-column: auto;
+			}
+		}
 	}
 }

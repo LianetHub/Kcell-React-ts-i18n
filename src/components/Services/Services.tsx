@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import css from './Services.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
@@ -47,18 +49,25 @@ export const Services: FC = () => {
                     {t('common.services')}
                 </h2>
 
-                <div className={css.servicesTabs}>
+                <Swiper
+                    slidesPerView={'auto'}
+                    spaceBetween={8}
+                    className={css.servicesTabs}
+                >
                     {tabs.map((tab) => (
-                        <Button
-                            key={tab.key}
-                            className={css.servicesTabsBtn}
-                            color={activeTab === tab.key ? 'primary' : 'grey'}
-                            onClick={() => setActiveTab(tab.key)}
-                        >
-                            {t(tab.labelKey)}
-                        </Button>
+                        <SwiperSlide key={tab.key} className={css.servicesTabsSlide}>
+                            <Button
+                                className={clsx(css.servicesTabsBtn, {
+                                    [css.active]: activeTab === tab.key
+                                })}
+                                color={activeTab === tab.key ? 'primary' : 'grey'}
+                                onClick={() => setActiveTab(tab.key)}
+                            >
+                                {t(tab.labelKey)}
+                            </Button>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
 
                 <ul className={css.servicesList}>
                     {filteredServices.map(({ key, link }) => (

@@ -166,10 +166,5 @@
         "pricing": "Стоимость в тенге с учетом НДС:",
         "hoursAnalysis": "часы анализа",
         "otherOffers": "Другие предложения"
-    },
-    "headerLinks": {
-        "digitalResearch": "Digital Research",
-        "scoring": "Скоринг",
-        "verification": "Верификация"
     }
 }

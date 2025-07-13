@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import Logo from 'src/assets/images/logo.svg?react';
 import ChevronDown from 'src/icons/ChevronDown.svg?react';
+import ArrowDown from 'src/icons/ArrowDown.svg?react';
 import { useSlideToggle } from 'src/hooks/useSlideToggle';
 
 type FooterTextKey =
@@ -37,40 +38,65 @@ export const Footer: FC = () => {
     const [isOpen, setIsOpen] = useState(true);
     const { elementRef: footerBodyRef, slideToggle } = useSlideToggle(300);
 
+    const { elementRef: aboutRef, slideToggle: toggleAbout } = useSlideToggle(300);
+    const { elementRef: clientsRef, slideToggle: toggleClients } = useSlideToggle(300);
+    const { elementRef: corporateRef, slideToggle: toggleCorporate } = useSlideToggle(300);
+
+
+    const [isAboutOpen, setIsAboutOpen] = useState(false);
+    const [isClientsOpen, setIsClientsOpen] = useState(false);
+    const [isCorporateOpen, setIsCorporateOpen] = useState(false);
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 576;
+
+
     const handleToggle = () => {
         slideToggle();
         setIsOpen((prev) => !prev);
     };
 
+    const handleColumnClick = (
+        toggleFn: () => void,
+        toggleState: React.Dispatch<React.SetStateAction<boolean>>
+    ) => {
+        if (isMobile) {
+            toggleFn();
+            toggleState(prev => !prev);
+        }
+    };
+
+
     const footerMenuItems: { to: string; textKey: FooterTextKey }[] = [
-        { to: '/page', textKey: 'footer.forInvestors' },
-        { to: '/page', textKey: 'footer.forPartners' },
-        { to: '/page', textKey: 'footer.forClients' },
+        { to: '#', textKey: 'footer.forInvestors' },
+        { to: '#', textKey: 'footer.forPartners' },
+        { to: '#', textKey: 'footer.forClients' },
     ];
 
     const aboutCompanyLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '/', textKey: 'footer.aboutCompany' },
-        { to: '/', textKey: 'footer.successStory' },
-        { to: '/', textKey: 'footer.careersInKcell' },
-        { to: '/', textKey: 'footer.procurements' },
-        { to: '/', textKey: 'footer.policies' },
-        { to: '/', textKey: 'footer.responsibleBusiness' },
-        { to: '/', textKey: 'footer.publicOfferAgreement' },
+        { to: '#', textKey: 'footer.aboutCompany' },
+        { to: '#', textKey: 'footer.successStory' },
+        { to: '#', textKey: 'footer.careersInKcell' },
+        { to: '#', textKey: 'footer.procurements' },
+        { to: '#', textKey: 'footer.policies' },
+        { to: '#', textKey: 'footer.responsibleBusiness' },
+        { to: '#', textKey: 'footer.publicOfferAgreement' },
     ];
 
     const forClientsLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '/', textKey: 'footer.news' },
-        { to: '/', textKey: 'footer.pressCenter' },
-        { to: '/', textKey: 'footer.frequentlyAskedQuestions' },
-        { to: '/', textKey: 'footer.forInvestors' },
-        { to: '/', textKey: 'footer.forPartners' },
-        { to: '/', textKey: 'footer.archiveOfGoodsAndServices' },
+        { to: '#', textKey: 'footer.news' },
+        { to: '#', textKey: 'footer.pressCenter' },
+        { to: '#', textKey: 'footer.frequentlyAskedQuestions' },
+        { to: '#', textKey: 'footer.forInvestors' },
+        { to: '#', textKey: 'footer.forPartners' },
+        { to: '#', textKey: 'footer.archiveOfGoodsAndServices' },
     ];
 
     const becomeCorporateClientLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '/', textKey: 'footer.corporateClientAdvantages' },
-        { to: '/', textKey: 'footer.leaveRequest' },
+        { to: '#', textKey: 'footer.corporateClientAdvantages' },
+        { to: '#', textKey: 'footer.leaveRequest' },
     ];
+
+
 
     return (
         <footer className={css.footer}>
@@ -111,52 +137,78 @@ export const Footer: FC = () => {
                         ref={footerBodyRef}
                     >
                         <div className={css.footerColumns}>
+
+
                             <div className={css.footerColumn}>
-                                <div className={css.footerColumnCaption}>
+                                <div
+                                    className={clsx(css.footerColumnCaption, {
+                                        [css.active]: isAboutOpen,
+                                    })}
+                                    onClick={() => handleColumnClick(toggleAbout, setIsAboutOpen)}
+                                >
                                     {t('footer.aboutCompany')}
+                                    <ArrowDown className={css.footerColumnCaptionIcon} />
                                 </div>
-                                <ul className={css.footerColumnList}>
-                                    {aboutCompanyLinks.map((link, index) => (
-                                        <li key={index} className={css.footerColumnItem}>
-                                            <Link to={link.to} className={css.footerColumnLink}>
-                                                {t(link.textKey)}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div ref={aboutRef} className={css.footerColumnBody}>
+                                    <ul className={css.footerColumnList} >
+                                        {aboutCompanyLinks.map((link, index) => (
+                                            <li key={index} className={css.footerColumnItem}>
+                                                <Link to={link.to} className={css.footerColumnLink}>
+                                                    {t(link.textKey)}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
 
                             <div className={css.footerColumn}>
-                                <div className={css.footerColumnCaption}>
+                                <div
+                                    className={clsx(css.footerColumnCaption, {
+                                        [css.active]: isClientsOpen,
+                                    })}
+                                    onClick={() => handleColumnClick(toggleClients, setIsClientsOpen)}
+                                >
                                     {t('footer.forClients')}
+                                    <ArrowDown className={css.footerColumnCaptionIcon} />
                                 </div>
-                                <ul className={css.footerColumnList}>
-                                    {forClientsLinks.map((link, index) => (
-                                        <li key={index} className={css.footerColumnItem}>
-                                            <Link to={link.to} className={css.footerColumnLink}>
-                                                {t(link.textKey)}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div ref={clientsRef} className={css.footerColumnBody}>
+                                    <ul className={css.footerColumnList} >
+                                        {forClientsLinks.map((link, index) => (
+                                            <li key={index} className={css.footerColumnItem}>
+                                                <Link to={link.to} className={css.footerColumnLink}>
+                                                    {t(link.textKey)}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
 
                             <div className={css.footerColumn}>
-                                <div className={css.footerColumnCaption}>
+                                <div
+                                    className={clsx(css.footerColumnCaption, {
+                                        [css.active]: isCorporateOpen,
+                                    })}
+                                    onClick={() => handleColumnClick(toggleCorporate, setIsCorporateOpen)}
+                                >
                                     {t('footer.becomeCorporateClient')}
+                                    <ArrowDown className={css.footerColumnCaptionIcon} />
                                 </div>
-                                <ul className={css.footerColumnList}>
-                                    {becomeCorporateClientLinks.map((link, index) => (
-                                        <li key={index} className={css.footerColumnItem}>
-                                            <Link to={link.to} className={css.footerColumnLink}>
-                                                {t(link.textKey)}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div ref={corporateRef} className={css.footerColumnBody}>
+                                    <ul className={css.footerColumnList} >
+                                        {becomeCorporateClientLinks.map((link, index) => (
+                                            <li key={index} className={css.footerColumnItem}>
+                                                <Link to={link.to} className={css.footerColumnLink}>
+                                                    {t(link.textKey)}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className={css.footerColumn}>
+                            <div className={clsx(css.footerColumn, css.onlyDesktop)}>
                                 <div className={css.footerColumnCaption}>
                                     {t('footer.forCorporateClients')}
                                 </div>

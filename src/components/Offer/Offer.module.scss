@@ -1,5 +1,8 @@
 .offer {
-	padding: 2.5rem 0;
+	padding: 0.625rem 0;
+	@media (min-width: $md4) {
+		padding: 2.5rem 0;
+	}
 
 	&Container {
 	}
@@ -7,8 +10,14 @@
 	&Body {
 		border-radius: 1rem;
 		background: linear-gradient(136deg, #5c46e6 0%, #5b2a97 100%);
-		padding: 4rem;
 		color: $white;
+		padding: 1.5rem;
+		@media (min-width: $md4) {
+			padding: 2rem;
+		}
+		@media (min-width: $md3) {
+			padding: 4rem;
+		}
 	}
 
 	&Title {
@@ -17,18 +26,23 @@
 
 	&Form {
 		max-width: 50rem;
-		margin: 2rem auto 0;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		gap: 1.5rem;
+		margin: 1rem auto 0;
+		@media (min-width: $md4) {
+			align-items: center;
+			margin: 2rem auto 0;
+		}
 	}
 
 	&FormFields {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		gap: 1.5rem;
 		width: 100%;
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	&FormFields {
