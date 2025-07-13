@@ -35,11 +35,23 @@ export const Button: FC<PropsWithChildren<Props>> = ({
     );
 
     if (to) {
+        if (to.startsWith('#')) {
+            return (
+                <a
+                    href={to}
+                    className={classNames}
+                    onClick={disabled ? (e) => e.preventDefault() : onClick}
+                >
+                    {children}
+                </a>
+            );
+        }
+
         return (
             <Link
                 to={to}
                 className={classNames}
-                onClick={disabled ? (e) => e.preventDefault() : undefined}
+                onClick={disabled ? (e) => e.preventDefault() : onClick}
             >
                 {children}
             </Link>

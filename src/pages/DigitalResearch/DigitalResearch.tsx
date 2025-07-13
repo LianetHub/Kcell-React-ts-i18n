@@ -1,8 +1,10 @@
+import { Offer } from "src/components";
+
 export function DigitalResearch() {
 
     return (
         <>
-            Digital Research
+            <Offer />
         </>
     )
 }

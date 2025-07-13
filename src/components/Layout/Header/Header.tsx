@@ -62,7 +62,7 @@ export const Header: FC = () => {
                     )}
                 </div>
                 <Button
-                    href=""
+                    to="#offer"
                     className={css.headerBtn}
                     size="medium"
                 >

@@ -3,9 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
+
+
 import css from './Promo.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
@@ -13,26 +12,18 @@ import { Button } from '@ui/Button';
 import ArrowNext from 'src/icons/ArrowNext.svg?react';
 import ArrowPrev from 'src/icons/ArrowPrev.svg?react';
 
-import Image1 from 'src/assets/images/promo/01.png';
-import Image2 from 'src/assets/images/promo/02.png';
-import Image3 from 'src/assets/images/promo/03.png';
+interface PromoSlide {
+    title: string;
+    description?: string;
+    image: string;
+    link: string;
+}
 
-const promoSlidesData = [
-    {
-        keyPrefix: 'marketingSolutionsPage.heroSection.slide1',
-        image: Image1,
-    },
-    {
-        keyPrefix: 'marketingSolutionsPage.heroSection.slide2',
-        image: Image2,
-    },
-    {
-        keyPrefix: 'marketingSolutionsPage.heroSection.slide3',
-        image: Image3,
-    },
-];
+interface PromoProps {
+    slides: PromoSlide[];
+}
 
-export const Promo: FC = () => {
+export const Promo: FC<PromoProps> = ({ slides }) => {
     const { t } = useTranslation();
 
     return (
@@ -42,6 +33,8 @@ export const Promo: FC = () => {
                     className={css.promoSlider}
                     modules={[Pagination, Navigation]}
                     slidesPerView={1}
+                    autoplay={{ delay: 5000 }}
+                    watchOverflow={true}
                     navigation={{
                         nextEl: `.${css.promoSliderNext}`,
                         prevEl: `.${css.promoSliderPrev}`,
@@ -51,36 +44,36 @@ export const Promo: FC = () => {
                         clickable: true,
                     }}
                 >
-                    {promoSlidesData.map((slide, index) => (
+                    {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
                             <div className={css.promoCard}>
                                 <div className={css.promoCardMain}>
                                     <div className={css.promoCardTitle}>
-                                        {t(`${slide.keyPrefix}.title`)}
+                                        {slide.title}
                                     </div>
-                                    <p className={css.promoCardSubtitle}>
-                                        {t(`${slide.keyPrefix}.description`)}
-                                    </p>
+                                    {slide.description && (
+                                        <p className={css.promoCardSubtitle}>
+                                            {slide.description}
+                                        </p>
+                                    )}
                                     <Button
+                                        to={slide.link}
                                         className={css.promoCardBtn}
-                                        color='white'
-                                        rounded='small'
+                                        color="white"
+                                        rounded="small"
                                     >
                                         {t('common.readMore')}
                                     </Button>
                                 </div>
                                 <div className={css.promoCardImage}>
-                                    <img src={slide.image} alt={t(`${slide.keyPrefix}.title`)} />
+                                    <img src={slide.image} alt={slide.title} />
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
 
                     <div className={css.promoSliderFooter}>
-                        <div
-                            className={clsx(css.promoSliderPagination, 'swiper-pagination')}
-
-                        ></div>
+                        <div className={clsx(css.promoSliderPagination, 'swiper-pagination')} />
                         <div className={css.promoSliderControls}>
                             <button className={clsx(css.promoSliderPrev, 'swiper-button-prev')}>
                                 <ArrowPrev />

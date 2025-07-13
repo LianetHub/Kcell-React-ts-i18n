@@ -36,7 +36,7 @@ export const Offer: FC = () => {
     };
 
     return (
-        <section className={css.offer}>
+        <section id='offer' className={css.offer}>
             <div className={clsx(css.offerContainer, 'container')}>
                 <div className={css.offerBody}>
                     <h2 className={clsx(css.offerTitle, 'title')}>
