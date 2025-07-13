@@ -11,6 +11,7 @@ interface Props {
     disabled?: boolean;
     onClick?: () => void;
     to?: string;
+    type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: FC<PropsWithChildren<Props>> = ({
@@ -21,6 +22,7 @@ export const Button: FC<PropsWithChildren<Props>> = ({
     disabled = false,
     onClick,
     to,
+    type = 'button',
     children
 }) => {
     const classNames = clsx(
@@ -49,6 +51,7 @@ export const Button: FC<PropsWithChildren<Props>> = ({
             className={classNames}
             disabled={disabled}
             onClick={onClick}
+            type={type}
         >
             {children}
         </button>

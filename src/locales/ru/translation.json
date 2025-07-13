@@ -68,7 +68,6 @@
         "phone": "Телефон"
     },
     "footer": {
-        "kcellBusinessBigData": "Kcell Бизнес BigData",
         "forInvestors": "Инвесторам",
         "forPartners": "Партнерам",
         "forClients": "Клиентам",
@@ -86,11 +85,12 @@
         "becomeCorporateClient": "Стать корпоративным клиентом",
         "corporateClientAdvantages": "Преимущества корпоративного клиента",
         "forCorporateClients": "Для корпоративных клиентов:",
-        "serviceQuestions": "Сервисные вопросы",
+        "serviceQuestions": "Сервисные вопросы:",
         "licenseText": "Государственная лицензия МТК № ДС 0000270 от 08.06.1998, бессрочная...",
         "copyright": "© АО «Kcell» 2000–2024",
         "privacyPolicy": "Политика конфиденциальности",
-        "serviceContact": "Сервис:"
+        "serviceContact": "Сервис:",
+        "leaveRequest": "Оставить заявку"
     },
     "businessBigDataPage": {
         "heroSection": {

@@ -1,136 +1,76 @@
 .footer {
-	padding: 1.75rem 0 2.5rem;
-
 	&Container {
-		@media (max-width: $md2) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1.5rem;
-		}
-		@media (max-width: $md4) {
-			grid-template-columns: 1fr;
-		}
 	}
-	&Body {
-		display: contents;
-		@media (min-width: $md2) {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-	}
-	&Main {
-		order: -1;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		@media (min-width: $md4) {
-			justify-content: flex-start;
-		}
-		@media (min-width: $md2) {
-			order: 0;
-		}
-		@media (min-width: $md1) {
-			flex: 0 0 15rem;
-		}
+	&Content {
 	}
-	&Logo {
-		& svg {
-			& path {
-				fill: #8a60f3;
-			}
-		}
+
+	.headerLogo {
 	}
 
 	&Menu {
-		font-size: 0.875rem;
-		@media (min-width: $md4) {
-			grid-row: span 2;
-		}
-		@media (min-width: $md2) {
-			grid-row: auto;
-		}
 	}
-	&MenuList {
-		display: flex;
-		flex-direction: column;
 
-		gap: 2rem;
-		align-items: center;
-		@media (min-width: $md4) {
-			align-items: flex-start;
-		}
-		@media (min-width: $md2) {
-			align-items: center;
-			flex-direction: row;
-			gap: 3.12rem;
-		}
+	&MenuList {
 	}
+
 	&MenuItem {
 	}
-	&MenuLink {
-		transition: color 0.3s ease;
-		&:hover {
-			color: $accent;
-		}
-	}
-	&Side {
-		display: flex;
-		justify-content: center;
 
-		@media (min-width: $md4) {
-			order: -1;
-			justify-content: flex-end;
-		}
-		@media (min-width: $md2) {
-			order: 0;
-		}
-		@media (min-width: $md1) {
-			flex: 0 0 15rem;
-		}
+	&MenuLink {
 	}
-	&Btn {
-		width: 100%;
-		@media (max-width: $md2) {
-			min-width: 17.5rem;
-		}
-		@media (min-width: $md4) {
-			width: auto;
-		}
+
+	&Toggler {
+	}
+
+	&Body {
+	}
+
+	&Columns {
+	}
+
+	&Column {
+	}
+
+	&ColumnCaption {
+	}
+
+	&ColumnList {
+	}
+
+	&ColumnItem {
+	}
+
+	&ColumnLink {
+	}
+
+	&ColumnText {
+	}
+
+	&ColumnContacts {
+	}
+
+	&ColumnContact {
+	}
+
+	&License {
 	}
 
 	&Bottom {
-		display: contents;
-		color: #333;
+	}
 
-		font-size: 0.875rem;
-		@media (min-width: $md2) {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 1.75rem;
-		}
-	}
-	&Info {
-		max-width: 15rem;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		@media (min-width: $md4) {
-			margin-right: 0;
-			text-align: right;
-		}
-		@media (min-width: $md2) {
-			text-align: left;
-			margin-left: 0;
-			max-width: 20rem;
-		}
-	}
 	&Copy {
-		text-align: center;
-		@media (min-width: $md4) {
-			text-align: right;
-		}
+	}
+
+	&Policies {
+	}
+
+	&PoliciesLink {
+	}
+
+	&Service {
+	}
+
+	&ServicePhone {
 	}
 }

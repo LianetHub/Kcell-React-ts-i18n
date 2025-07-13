@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react'; // Добавляем useState
 import { useTranslation } from 'react-i18next';
 
 import css from './Offer.module.scss';
@@ -6,10 +6,34 @@ import clsx from 'clsx';
 import { Button } from '@ui/Button';
 import { Input } from '@ui/Input';
 
-
-
 export const Offer: FC = () => {
     const { t } = useTranslation();
+
+
+    const [name, setName] = useState<string>('');
+    const [phone, setPhone] = useState<string>('+7');
+
+    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setName(event.target.value);
+    };
+
+    const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPhone(event.target.value);
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+
+        const formData = {
+            name: name,
+            phone: phone,
+        };
+
+        console.log('Данные формы для отправки:', formData);
+
+
+    };
 
     return (
         <section className={css.offer}>
@@ -18,25 +42,28 @@ export const Offer: FC = () => {
                     <h2 className={clsx(css.offerTitle, 'title')}>
                         {t('form.fillOutForm')}
                     </h2>
-                    <form action="#" className={css.offerForm}>
+                    <form onSubmit={handleSubmit} className={css.offerForm}>
                         <div className={css.offerFormFields}>
                             <Input
                                 className={css.offerFormInput}
                                 label={t('form.yourName')}
                                 placeholder={t('form.howToAddressYou')}
+                                value={name}
+                                onChange={handleNameChange}
                             />
                             <Input
                                 className={css.offerFormInput}
                                 label={t('form.phone')}
                                 type='tel'
-                                value={"+7"}
+                                value={phone}
+                                onChange={handlePhoneChange}
                             />
                         </div>
                         <Button
                             className={css.offerFormBtn}
                             color='white'
                             rounded='small'
-
+                            type='submit'
                         >
                             {t('common.leaveRequest')}
                         </Button>

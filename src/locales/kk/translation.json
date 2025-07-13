@@ -68,7 +68,6 @@
         "phone": "Телефон"
     },
     "footer": {
-        "kcellBusinessBigData": "Kcell Бизнестiк BigData",
         "forInvestors": "Инвесторларға",
         "forPartners": "Серіктестерге",
         "forClients": "Клиенттерге",
@@ -90,7 +89,8 @@
         "licenseText": "Қазақстан Республикасы Инвестициялар және даму министрлігінің Байланыс, ақпараттандыру және ақпарат комитеті берген №ДС 0000270 мемлекеттік лицензиясы, 08.06.1998 ж., мерзімсіз",
         "copyright": "© АО «Kcell» 2000–2024",
         "privacyPolicy": "Құпиялық саясаты",
-        "serviceContact": "Қызмет:"
+        "serviceContact": "Қызмет:",
+        "leaveRequest": "Өтініш қалдыру"
     },
     "businessBigDataPage": {
         "heroSection": {
