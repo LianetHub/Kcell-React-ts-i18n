@@ -45,7 +45,12 @@ export const Home = () => {
         <>
             <Promo slides={promoSlidesData} onButtonClick={handleTabChange} />
             <Benefits />
-            <Services initialTab={currentTab} onTabChange={handleTabChange} />
+            <Services
+                showTabs={true}
+                initialTab={currentTab}
+                onTabChange={handleTabChange}
+                title={t("common.services")}
+            />
             <Offer />
         </>
     )

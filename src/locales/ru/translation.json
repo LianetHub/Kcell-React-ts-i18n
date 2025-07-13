@@ -9,7 +9,8 @@
         "ourAdvantages": "Наши преимущества",
         "services": "Услуги",
         "financialServices": "Финансовые сервисы",
-        "other": "Другое"
+        "other": "Другое",
+        "otherOffers": "Другие предложения"
     },
     "marketingSolutionsPage": {
         "heroSection": {
@@ -164,7 +165,6 @@
             }
         },
         "pricing": "Стоимость в тенге с учетом НДС:",
-        "hoursAnalysis": "часы анализа",
-        "otherOffers": "Другие предложения"
+        "hoursAnalysis": "часы анализа"
     }
 }

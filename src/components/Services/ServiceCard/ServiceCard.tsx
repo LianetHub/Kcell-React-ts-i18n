@@ -11,7 +11,7 @@ interface ServiceCardProps {
     link: string;
 }
 
-export const ServiceCard: FC<ServiceCardProps> = ({ title, subtitle, description, link, readMoreText }) => {
+export const ServiceCard: FC<ServiceCardProps> = ({ title, subtitle, description, link }) => {
     const { t } = useTranslation();
 
     return (

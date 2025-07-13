@@ -46,4 +46,29 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
+
+	&Slider {
+		margin-top: 1.5rem;
+		overflow: visible;
+		:global {
+			.swiper-pagination {
+				margin-top: 1.5rem;
+				justify-content: center;
+			}
+			.swiper-pagination-bullet {
+				background-color: $black;
+				opacity: 0.16;
+			}
+
+			.swiper-pagination-bullet-active {
+				opacity: 1;
+				background-color: $accent;
+			}
+		}
+	}
+
+	&Slide {
+		width: 30rem;
+		height: auto;
+	}
 }

@@ -1,6 +1,7 @@
-import { FC, forwardRef } from 'react'; // Removed useState, useEffect
+import { FC, forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import css from './Services.module.scss';
 import clsx from 'clsx';
 import { Button } from '@ui/Button';
@@ -19,8 +20,11 @@ type ServiceKey =
 export type TabKey = 'marketing-solutions' | 'financial-services' | 'other';
 
 interface ServicesProps {
+    title: string;
     initialTab?: TabKey;
-    onTabChange: (tabKey: TabKey) => void;
+    onTabChange?: (tabKey: TabKey) => void;
+    showTabs?: boolean;
+    excludeServiceKey?: ServiceKey;
 }
 
 const tabs = [
@@ -40,59 +44,101 @@ const services: { key: ServiceKey; link: string; tab: TabKey }[] = [
     { key: 'businessLook', link: '/business-look', tab: 'other' },
 ];
 
-export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps>(({ initialTab, onTabChange }, ref) => {
-    const { t } = useTranslation();
+export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps>(
+    ({ title,
+        initialTab,
+        onTabChange,
+        showTabs = false,
+        excludeServiceKey
+    }, ref) => {
+        const { t } = useTranslation();
 
-    const activeTab = initialTab || 'marketing-solutions';
+        const activeTab = showTabs ? (initialTab || 'marketing-solutions') : 'marketing-solutions';
 
-    return (
-        <section id='services' className={css.services} ref={ref}>
-            <div className={clsx(css.servicesContainer, 'container')}>
-                <h2 className={clsx(css.servicesTitle, 'title')}>
-                    {t('common.services')}
-                </h2>
+        const filteredServices = showTabs
+            ? services
+            : services.filter(service => service.key !== excludeServiceKey);
 
-                <Swiper
-                    slidesPerView={'auto'}
-                    spaceBetween={8}
-                    className={css.servicesTabs}
-                >
-                    {tabs.map((tab) => (
-                        <SwiperSlide key={tab.key} className={css.servicesTabsSlide}>
-                            <Button
-                                className={clsx(css.servicesTabsBtn, {
-                                    [css.active]: activeTab === tab.key
-                                })}
-                                color={activeTab === tab.key ? 'primary' : 'grey'}
-                                onClick={() => onTabChange(tab.key)}
-                            >
-                                {t(tab.labelKey)}
-                            </Button>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+        const renderedServiceCards = filteredServices.map(({ key, link }) => (
+            <ServiceCard
+                key={key}
+                title={t(`services.list.${key}.title`)}
+                subtitle={t(`services.list.${key}.subtitle`)}
+                description={t(`services.list.${key}.description`)}
+                link={link}
 
-                {tabs.map((tab) => (
-                    <ul
-                        key={tab.key}
-                        className={clsx(css.servicesList, {
-                            [css.hidden]: activeTab !== tab.key
-                        })}
-                    >
-                        {services
-                            .filter(service => service.tab === tab.key)
-                            .map(({ key, link }) => (
-                                <ServiceCard
-                                    key={key}
-                                    title={t(`services.list.${key}.title`)}
-                                    subtitle={t(`services.list.${key}.subtitle`)}
-                                    description={t(`services.list.${key}.description`)}
-                                    link={link}
-                                />
+            />
+        ));
+
+        return (
+            <section id='services' className={css.services} ref={ref}>
+                <div className={clsx(css.servicesContainer, 'container')}>
+                    <h2 className={clsx(css.servicesTitle, 'title')}>
+                        {title}
+                    </h2>
+
+                    {showTabs && (
+                        <Swiper
+                            slidesPerView={'auto'}
+                            spaceBetween={8}
+                            className={css.servicesTabs}
+                        >
+                            {tabs.map((tab) => (
+                                <SwiperSlide key={tab.key} className={css.servicesTabsSlide}>
+                                    <Button
+                                        className={clsx(css.servicesTabsBtn, {
+                                            [css.active]: activeTab === tab.key
+                                        })}
+                                        color={activeTab === tab.key ? 'primary' : 'grey'}
+                                        onClick={() => onTabChange && onTabChange(tab.key)}
+                                    >
+                                        {t(tab.labelKey)}
+                                    </Button>
+                                </SwiperSlide>
                             ))}
-                    </ul>
-                ))}
-            </div>
-        </section>
-    );
-});
+                        </Swiper>
+                    )}
+
+                    {showTabs ? (
+                        tabs.map((tab) => (
+                            <ul
+                                key={tab.key}
+                                className={clsx(css.servicesList, {
+                                    [css.hidden]: activeTab !== tab.key
+                                })}
+                            >
+                                {services
+                                    .filter(service => service.tab === tab.key)
+                                    .map(({ key, link }) => (
+                                        <ServiceCard
+                                            key={key}
+                                            title={t(`services.list.${key}.title`)}
+                                            subtitle={t(`services.list.${key}.subtitle`)}
+                                            description={t(`services.list.${key}.description`)}
+                                            link={link}
+                                        />
+                                    ))}
+                            </ul>
+                        ))
+                    ) : (
+                        <Swiper
+                            modules={[Pagination]}
+                            slidesPerView={'auto'}
+                            spaceBetween={16}
+                            grabCursor={true}
+                            className={css.servicesSlider}
+                            pagination={{ clickable: true }}
+                        >
+                            {renderedServiceCards.map((serviceCard, index) => (
+                                <SwiperSlide key={index}
+                                    className={css.servicesSlide}>
+                                    {serviceCard}
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    )}
+                </div>
+            </section>
+        );
+    }
+);

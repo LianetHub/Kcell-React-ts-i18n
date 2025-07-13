@@ -1,4 +1,4 @@
-import { Offer, Promo } from "src/components"
+import { Offer, Promo, Services } from "src/components"
 import Image7 from 'src/assets/images/promo/07.png';
 import { useTranslation } from 'react-i18next';
 
@@ -17,6 +17,10 @@ export const Scoring = () => {
         <>
             <Promo slides={promoSlidesData} />
             <Offer />
+            <Services
+                title={t("common.otherOffers")}
+                excludeServiceKey={"scoring"}
+            />
         </>
     )
 }

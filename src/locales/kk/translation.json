@@ -9,7 +9,8 @@
         "ourAdvantages": "Біздің артықшылықтарымыз",
         "services": "Қызметтер",
         "financialServices": "Қаржылық сервистер",
-        "other": "Басқа"
+        "other": "Басқа",
+        "otherOffers": "Басқа ұсыныстар"
     },
     "marketingSolutionsPage": {
         "heroSection": {
@@ -164,7 +165,6 @@
             }
         },
         "pricing": "ҚҚС ескерілген бағасы (теңгемен):",
-        "hoursAnalysis": "талдау сағаттары",
-        "otherOffers": "Басқа ұсыныстар"
+        "hoursAnalysis": "талдау сағаттары"
     }
 }

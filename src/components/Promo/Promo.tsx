@@ -27,6 +27,8 @@ interface PromoProps {
 export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
     const { t } = useTranslation();
 
+    const hasMultipleSlides = slides.length > 1;
+
     return (
         <section className={css.promo}>
             <div className={clsx(css.promoContainer, 'container')}>
@@ -34,16 +36,16 @@ export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
                     className={css.promoSlider}
                     modules={[Pagination, Navigation, Autoplay]}
                     slidesPerView={1}
-                    autoplay={{ delay: 5000 }}
+                    autoplay={hasMultipleSlides ? { delay: 5000 } : false}
                     watchOverflow={true}
-                    navigation={{
+                    navigation={hasMultipleSlides ? {
                         nextEl: `.${css.promoSliderNext}`,
                         prevEl: `.${css.promoSliderPrev}`,
-                    }}
-                    pagination={{
+                    } : false}
+                    pagination={hasMultipleSlides ? {
                         el: `.${css.promoSliderPagination}`,
                         clickable: true,
-                    }}
+                    } : false}
                 >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
@@ -79,17 +81,19 @@ export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
                         </SwiperSlide>
                     ))}
 
-                    <div className={css.promoSliderFooter}>
-                        <div className={clsx(css.promoSliderPagination, 'swiper-pagination')} />
-                        <div className={css.promoSliderControls}>
-                            <button className={clsx(css.promoSliderPrev, 'swiper-button-prev')}>
-                                <ArrowPrev />
-                            </button>
-                            <button className={clsx(css.promoSliderNext, 'swiper-button-next')}>
-                                <ArrowNext />
-                            </button>
+                    {hasMultipleSlides && (
+                        <div className={css.promoSliderFooter}>
+                            <div className={clsx(css.promoSliderPagination, 'swiper-pagination')} />
+                            <div className={css.promoSliderControls}>
+                                <button className={clsx(css.promoSliderPrev, 'swiper-button-prev')}>
+                                    <ArrowPrev />
+                                </button>
+                                <button className={clsx(css.promoSliderNext, 'swiper-button-next')}>
+                                    <ArrowNext />
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </Swiper>
             </div>
         </section>

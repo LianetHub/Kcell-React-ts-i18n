@@ -1,4 +1,4 @@
-import { Promo, Offer } from "src/components";
+import { Promo, Offer, Services } from "src/components";
 
 import Image5 from 'src/assets/images/promo/05.png';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +21,10 @@ export const LeadGeneration = () => {
         <>
             <Promo slides={promoSlidesData} />
             <Offer />
+            <Services
+                title={t("common.otherOffers")}
+                excludeServiceKey={"leadGeneration"}
+            />
         </>
     )
 }

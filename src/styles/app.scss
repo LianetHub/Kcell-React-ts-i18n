@@ -115,7 +115,12 @@ body {
 	display: flex;
 	gap: 0.25rem;
 }
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	--swiper-pagination-bullet-horizontal-gap: 0;
+}
 
 .swiper-pagination-bullet {
 	cursor: pointer;
+	margin: 0;
 }
