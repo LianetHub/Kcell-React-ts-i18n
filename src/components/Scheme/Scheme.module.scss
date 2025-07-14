@@ -1,0 +1,94 @@
+.scheme {
+	margin: 0.625rem 0;
+	padding: 1.25rem 0;
+	background: $grey;
+	@media (min-width: $md4) {
+		margin: 2.5rem 0;
+		padding: 5rem 0;
+	}
+	&Container {
+		max-width: rem(594);
+	}
+
+	&Title {
+	}
+
+	&List {
+		border-top: rem(1) solid rgba($color: $black, $alpha: 0.12);
+		margin-top: 1.5rem;
+	}
+
+	&Step {
+		padding: 1.5rem;
+
+		border-bottom: rem(1) solid rgba($color: $black, $alpha: 0.12);
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+		&.active {
+			.schemeStepButton {
+				opacity: 1;
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&StepHeader {
+		display: flex;
+		gap: 1rem;
+		cursor: pointer;
+	}
+
+	&StepNum {
+		border-radius: 6.25rem;
+		background: $accent;
+		color: $white;
+		width: 2.5rem;
+		height: 2.5rem;
+		flex-shrink: 0;
+		text-align: center;
+		font-size: 1.25rem;
+		font-weight: 600;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&StepBody {
+		flex: 1 1 auto;
+	}
+
+	&StepTitle {
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 150%;
+		letter-spacing: 0.02rem;
+		min-height: 2.5rem;
+		align-content: center;
+	}
+
+	&StepDescription {
+		opacity: 0.64;
+		font-size: 1rem;
+		line-height: 150%;
+		display: none;
+		margin-left: 3.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	&StepButton {
+		margin-top: 0.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.48;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+
+	&Bottom {
+		margin-top: 1.5rem;
+	}
+}

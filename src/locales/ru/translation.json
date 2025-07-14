@@ -132,10 +132,22 @@
         },
         "workflow": {
             "title": "Схема работы",
-            "fillFormOrMeet": "Заполнение анкеты или встреча",
-            "technicalSpecificationApproval": "Согласование технического задания",
-            "commercialProposalCalculation": "Расчет коммерческого предложения",
-            "reportPreparationAndTransfer": "Подготавливается и передача отчета"
+            "fillFormOrMeet": {
+                "title": "Заполнение анкеты или встреча",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "technicalSpecificationApproval": {
+                "title": "Согласование технического задания",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "commercialProposalCalculation": {
+                "title": "Расчет коммерческого предложения",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "reportPreparationAndTransfer": {
+                "title": "Подготавливается и передача отчета",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            }
         },
         "technicalIntegration": {
             "title": "Техническая интеграция",

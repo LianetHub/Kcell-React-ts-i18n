@@ -5,6 +5,18 @@
 	border-radius: 1rem;
 	background: $grey;
 	padding: 1rem;
+	&:has(.cardTitle) {
+		& .cardIcon {
+			align-self: flex-start;
+		}
+	}
+
+	&.white {
+		background: $white;
+		.cardIcon {
+			background: $grey;
+		}
+	}
 
 	&Icon {
 		width: 3.5rem;
@@ -17,14 +29,8 @@
 		background: $white;
 	}
 
-	&Text {
-		font-size: 1rem;
-		font-weight: 500;
-		line-height: 150%;
-		letter-spacing: 0.02rem;
-	}
-
 	&Title {
+		padding-top: 0.75rem;
 		font-size: 1.25rem;
 		font-weight: 500;
 		line-height: 140%;
@@ -33,6 +39,14 @@
 			margin-top: 0.25rem;
 			color: rgba(17, 17, 20, 0.64);
 			font-weight: 400;
+			padding-bottom: 0.75rem;
 		}
+	}
+
+	&Text {
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 150%;
+		letter-spacing: 0.02rem;
 	}
 }

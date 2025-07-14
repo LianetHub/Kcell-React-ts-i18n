@@ -132,10 +132,22 @@
         },
         "workflow": {
             "title": "Жұмыс схемасы",
-            "fillFormOrMeet": "Анкетаны толтыру немесе кездесу",
-            "technicalSpecificationApproval": "Техникалық тапсырманы келісу",
-            "commercialProposalCalculation": "Коммерциялық ұсынысты есептеу",
-            "reportPreparationAndTransfer": "Есепті дайындау және тапсыру"
+            "fillFormOrMeet": {
+                "title": "Анкетаны толтыру немесе кездесу",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "technicalSpecificationApproval": {
+                "title": "Техникалық тапсырманы келісу",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "commercialProposalCalculation": {
+                "title": "Коммерциялық ұсынысты есептеу",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "reportPreparationAndTransfer": {
+                "title": "Есепті дайындау және тапсыру",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            }
         },
         "technicalIntegration": {
             "title": "Техникалық интеграция",

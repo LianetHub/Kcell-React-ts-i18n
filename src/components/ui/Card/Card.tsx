@@ -7,18 +7,20 @@ interface Props {
     icon?: ReactNode;
     title?: string;
     text?: string;
+    color?: "grey" | "white"
 }
 
 export const Card: FC<PropsWithChildren<Props>> = ({
     className,
     icon,
     title,
-    text
+    text,
+    color = "grey"
 }) => {
 
 
     return (
-        <li className={clsx(css.card, className)}>
+        <li className={clsx(css.card, className, css[color])}>
             {icon && (
                 <div className={css.cardIcon}>
                     {icon}
