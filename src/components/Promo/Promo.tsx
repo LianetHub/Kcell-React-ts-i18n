@@ -48,7 +48,7 @@ export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
                     } : false}
                 >
                     {slides.map((slide, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className={css.promoSlide}>
                             <div className={css.promoCard}>
                                 <div className={css.promoCardMain}>
                                     <div className={css.promoCardTitle}>
@@ -74,7 +74,9 @@ export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
                                         </Button>
                                     )}
                                 </div>
-                                <div className={css.promoCardImage}>
+                                <div className={clsx(css.promoCardImage, {
+                                    [css.center]: !hasMultipleSlides
+                                })}>
                                     <img src={slide.image} alt={slide.title} />
                                 </div>
                             </div>

@@ -52,7 +52,9 @@ export const BusinessLook = () => {
 
     return (
         <>
-            <Promo slides={promoSlidesData} />
+            <Promo
+
+                slides={promoSlidesData} />
             <Benefits
                 columns={2}
                 title={t('internalPage.mainAdvantages.title')}
