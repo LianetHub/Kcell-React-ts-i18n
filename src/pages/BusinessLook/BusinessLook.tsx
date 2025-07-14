@@ -53,7 +53,6 @@ export const BusinessLook = () => {
     return (
         <>
             <Promo
-
                 slides={promoSlidesData} />
             <Benefits
                 columns={2}
