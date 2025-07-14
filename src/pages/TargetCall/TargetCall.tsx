@@ -1,4 +1,4 @@
-import { Offer, Promo, Services } from "src/components"
+import { Offer, Price, Promo, Services } from "src/components"
 import Image6 from 'src/assets/images/promo/06.png';
 import { useTranslation } from 'react-i18next';
 
@@ -17,6 +17,10 @@ export const TargetCall = () => {
         <>
             <Promo slides={promoSlidesData} />
             <Offer />
+            <Price
+                title={t("internalPage.pricingTitle")}
+                value={t("internalPage.pricingValue")}
+            />
             <Services
                 title={t("common.otherOffers")}
                 excludeServiceKey={"targetCall"}

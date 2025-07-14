@@ -1,0 +1,30 @@
+.price {
+	padding: 0.625rem 0;
+	@media (min-width: $md4) {
+		padding: 0.5rem 0 2.5rem;
+	}
+
+	&Container {
+	}
+
+	&Body {
+		border-radius: 0.5rem;
+		background: #f5f6f7;
+		text-align: center;
+		padding: 1.25rem;
+	}
+
+	&Title {
+		opacity: 0.44;
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 171.429%;
+		letter-spacing: 0.0175rem;
+	}
+
+	&Value {
+		margin-top: 0.62rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+}
