@@ -6,9 +6,7 @@
 	background: $grey;
 	padding: 1rem;
 	&:has(.cardTitle) {
-		& .cardIcon {
-			align-self: flex-start;
-		}
+		align-items: flex-start;
 	}
 
 	&.white {
@@ -31,15 +29,22 @@
 
 	&Title {
 		padding-top: 0.75rem;
-		font-size: 1.25rem;
 		font-weight: 500;
 		line-height: 140%;
 		letter-spacing: 0.025rem;
+		font-size: 1.125rem;
+		@media (min-width: $md3) {
+			font-size: 1.25rem;
+		}
 		& + .cardText {
 			margin-top: 0.25rem;
 			color: rgba(17, 17, 20, 0.64);
 			font-weight: 400;
 			padding-bottom: 0.75rem;
+			font-size: 0.875rem;
+			@media (min-width: $md3) {
+				font-size: 1rem;
+			}
 		}
 	}
 

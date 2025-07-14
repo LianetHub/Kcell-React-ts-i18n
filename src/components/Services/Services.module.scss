@@ -48,12 +48,18 @@
 	}
 
 	&Slider {
-		margin-top: 1.5rem;
 		overflow: visible;
+		margin-top: 1rem;
+		@media (min-width: $md3) {
+			margin-top: 1.5rem;
+		}
 		:global {
 			.swiper-pagination {
-				margin-top: 1.5rem;
 				justify-content: center;
+				margin-top: 1rem;
+				@media (min-width: $md3) {
+					margin-top: 1.5rem;
+				}
 			}
 			.swiper-pagination-bullet {
 				background-color: $black;
@@ -68,7 +74,10 @@
 	}
 
 	&Slide {
-		width: 30rem;
 		height: auto;
+		width: 18.75rem;
+		@media (min-width: $md3) {
+			width: 30rem;
+		}
 	}
 }

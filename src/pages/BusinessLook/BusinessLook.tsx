@@ -1,4 +1,4 @@
-import { Benefits, Offer, Promo, Services, Price, Scheme } from "src/components"
+import { Benefits, Offer, Promo, Services, Price, Scheme, Examples } from "src/components"
 import Image11 from 'src/assets/images/promo/11.png';
 import { useTranslation } from 'react-i18next';
 import AdditionalService from 'src/icons/AdditionalService.svg?react';
@@ -63,6 +63,7 @@ export const BusinessLook = () => {
                 secondaryBenefitsData={featuresAndCapabilities}
             />
             <Scheme />
+            <Examples />
             <Offer />
             <Price
                 title={t("internalPage.pricingTitle")}
