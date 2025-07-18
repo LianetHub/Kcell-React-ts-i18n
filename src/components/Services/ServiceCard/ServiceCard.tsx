@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@ui/Button';
@@ -7,7 +7,7 @@ import css from './ServiceCard.module.scss';
 interface ServiceCardProps {
     title: string;
     subtitle: string;
-    description: string;
+    description: string | ReactNode;
     link: string;
 }
 

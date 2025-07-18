@@ -1,5 +1,5 @@
 import { FC, forwardRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import css from './Services.module.scss';
@@ -64,7 +64,15 @@ export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps
                 key={key}
                 title={t(`services.list.${key}.title`)}
                 subtitle={t(`services.list.${key}.subtitle`)}
-                description={t(`services.list.${key}.description`)}
+                description={
+                    <Trans
+                        i18nKey={`services.list.${key}.description`}
+                        components={[
+                            <></>,
+                            <a href="https://activ.kz/smart" className={css.link} target="_blank" />,
+                        ]}
+                    />
+                }
                 link={link}
 
             />
@@ -114,7 +122,15 @@ export const Services: FC<ServicesProps> = forwardRef<HTMLElement, ServicesProps
                                             key={key}
                                             title={t(`services.list.${key}.title`)}
                                             subtitle={t(`services.list.${key}.subtitle`)}
-                                            description={t(`services.list.${key}.description`)}
+                                            description={
+                                                <Trans
+                                                    i18nKey={`services.list.${key}.description`}
+                                                    components={[
+                                                        <></>,
+                                                        <a href="https://activ.kz/smart" className={css.link} target="_blank" />,
+                                                    ]}
+                                                />
+                                            }
                                             link={link}
                                         />
                                     ))}
