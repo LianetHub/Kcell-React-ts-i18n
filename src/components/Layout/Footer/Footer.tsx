@@ -65,37 +65,29 @@ export const Footer: FC = () => {
         }
     };
 
-
-    const footerMenuItems: { to: string; textKey: FooterTextKey }[] = [
-        { to: '#', textKey: 'footer.forInvestors' },
-        { to: '#', textKey: 'footer.forPartners' },
-        { to: '#', textKey: 'footer.forClients' },
-    ];
-
     const aboutCompanyLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '#', textKey: 'footer.aboutCompany' },
-        { to: '#', textKey: 'footer.successStory' },
-        { to: '#', textKey: 'footer.careersInKcell' },
-        { to: '#', textKey: 'footer.procurements' },
-        { to: '#', textKey: 'footer.policies' },
-        { to: '#', textKey: 'footer.responsibleBusiness' },
-        { to: '#', textKey: 'footer.publicOfferAgreement' },
+        { to: 'https://www.kcell.kz/about', textKey: 'footer.aboutCompany' },
+        { to: 'https://b2b.kcell.kz/ru/product/success', textKey: 'footer.successStory' },
+        { to: 'https://b2b.kcell.kz/ru/article/career', textKey: 'footer.careersInKcell' },
+        { to: 'https://www.kcell.kz/purchases', textKey: 'footer.procurements' },
+        { to: 'https://b2b.kcell.kz/ru/article/policies', textKey: 'footer.policies' },
+        { to: 'https://b2b.kcell.kz/ru/article/responsible-business', textKey: 'footer.responsibleBusiness' },
+        { to: 'https://b2b.kcell.kz/ru/product/documents', textKey: 'footer.publicOfferAgreement' },
     ];
 
     const forClientsLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '#', textKey: 'footer.news' },
-        { to: '#', textKey: 'footer.pressCenter' },
-        { to: '#', textKey: 'footer.frequentlyAskedQuestions' },
-        { to: '#', textKey: 'footer.forInvestors' },
-        { to: '#', textKey: 'footer.forPartners' },
-        { to: '#', textKey: 'footer.archiveOfGoodsAndServices' },
+        { to: 'https://www.kcell.kz/news', textKey: 'footer.news' },
+        { to: 'https://www.kcell.kz/press-releases', textKey: 'footer.pressCenter' },
+        { to: 'https://www.kcell.kz/faq', textKey: 'footer.frequentlyAskedQuestions' },
+        { to: 'https://investors.kcell.kz/', textKey: 'footer.forInvestors' },
+        { to: 'https://b2b.kcell.kz/ru/article/for-partners', textKey: 'footer.forPartners' },
+        { to: 'https://b2b.kcell.kz/ru/product/archive-b2b', textKey: 'footer.archiveOfGoodsAndServices' },
     ];
 
     const becomeCorporateClientLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: '#', textKey: 'footer.corporateClientAdvantages' },
-        { to: '#', textKey: 'footer.leaveRequest' },
+        { to: 'https://b2b.kcell.kz/ru/article/2709/531', textKey: 'footer.corporateClientAdvantages' },
+        { to: 'https://survey.kcell.kz/limesurvey/index.php/417257/lang-ru', textKey: 'footer.leaveRequest' },
     ];
-
 
 
     return (
@@ -107,18 +99,6 @@ export const Footer: FC = () => {
                             <Logo className={css.footerLogoIcon} />
                             {t('common.businessBigData')}
                         </Link>
-
-                        <nav className={css.footerMenu}>
-                            <ul className={css.footerMenuList}>
-                                {footerMenuItems.map((item, index) => (
-                                    <li key={index} className={css.footerMenuItem}>
-                                        <Link to={item.to} className={css.footerMenuLink}>
-                                            {t(item.textKey)}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
 
                         <button
                             className={clsx(css.footerToggler, {
@@ -153,7 +133,10 @@ export const Footer: FC = () => {
                                     <ul className={css.footerColumnList} >
                                         {aboutCompanyLinks.map((link, index) => (
                                             <li key={index} className={css.footerColumnItem}>
-                                                <Link to={link.to} className={css.footerColumnLink}>
+                                                <Link
+                                                    to={link.to}
+                                                    target='_blank'
+                                                    className={css.footerColumnLink}>
                                                     {t(link.textKey)}
                                                 </Link>
                                             </li>
@@ -218,9 +201,9 @@ export const Footer: FC = () => {
                                             {t('footer.serviceQuestions')}
                                         </div>
                                         <div className={css.footerColumnContacts}>
-                                            <a href="tel:+77272587021" className={css.footerColumnContact}>
-                                                9099, +7 727 258 7021
-                                            </a>
+                                            <div className={css.footerColumnContact}>
+                                                <a href='tel:9099'>9099</a>, <a href='tel:+77272587021'>+7 727 258 7021</a>
+                                            </div>
                                             <a href="mailto:email@kcell.kz" className={css.footerColumnContact}>
                                                 email@kcell.kz
                                             </a>
@@ -237,26 +220,9 @@ export const Footer: FC = () => {
                         </div>
                     </div>
 
-                    <div className={css.footerLicense}>
-                        {t('footer.licenseText')}
-                    </div>
 
                     <div className={css.footerBottom}>
                         <div className={css.footerCopy}>{t('footer.copyright')}</div>
-                        <div className={css.footerPolicies}>
-                            <Link to="/" className={css.footerPoliciesLink}>
-                                {t('footer.privacyPolicy')}
-                            </Link>
-                            <Link to="/" className={css.footerPoliciesLink}>
-                                {t('footer.publicOfferAgreement')}
-                            </Link>
-                        </div>
-                        <div className={css.footerService}>
-                            {t('footer.serviceContact')}
-                            <a href="tel:+77272587021" className={css.footerServicePhone}>
-                                +7 (727) 258–70–21 / 9099
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,6 @@
 	}
 
 	&Form {
-		max-width: 50rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
@@ -42,6 +41,20 @@
 		width: 100%;
 		@media (min-width: $md4) {
 			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&FormInput {
+		&:last-child:nth-child(odd) {
+			@media (min-width: $md4) {
+				grid-column: span 2;
+			}
+			@media (min-width: $md2) {
+				grid-column: auto;
+			}
 		}
 	}
 

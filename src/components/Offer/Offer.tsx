@@ -12,6 +12,7 @@ export const Offer: FC = () => {
 
     const [name, setName] = useState<string>('');
     const [phone, setPhone] = useState<string>('+7');
+    const [email, setEmail] = useState<string>('');
 
     const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
@@ -21,6 +22,10 @@ export const Offer: FC = () => {
         setPhone(event.target.value);
     };
 
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(event.target.value);
+    };
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -28,6 +33,7 @@ export const Offer: FC = () => {
         const formData = {
             name: name,
             phone: phone,
+            email: email,
         };
 
         console.log('Данные формы для отправки:', formData);
@@ -57,6 +63,14 @@ export const Offer: FC = () => {
                                 type='tel'
                                 value={phone}
                                 onChange={handlePhoneChange}
+                            />
+                            <Input
+                                className={css.offerFormInput}
+                                label={t('form.email')}
+                                placeholder={t('form.emailPlaceholder')}
+                                type='email'
+                                value={email}
+                                onChange={handleEmailChange}
                             />
                         </div>
                         <Button

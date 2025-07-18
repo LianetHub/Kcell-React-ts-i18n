@@ -16,7 +16,7 @@ export const Input: FC<Props> = ({
     const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
 
     return (
-        <div className={css.field}>
+        <div className={clsx(css.field, className)}>
             {label && (
                 <label htmlFor={inputId} className={css.label}>
                     {label}
@@ -24,7 +24,7 @@ export const Input: FC<Props> = ({
             )}
             <input
                 id={inputId}
-                className={clsx(css.input, className)}
+                className={css.input}
                 {...props}
             />
         </div>
