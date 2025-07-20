@@ -1,13 +1,21 @@
-import { Promo, Offer, Services, Price, Examples, Scheme, Benefits } from "src/components";
+import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image4 from 'src/assets/images/promo/04.png';
 import AdditionalService from 'src/icons/AdditionalService.svg?react';
 import Globe from 'src/icons/Globe.svg?react';
 import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
 import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Details from 'src/icons/Details.svg?react';
-import { useTranslation } from 'react-i18next';
-import { BenefitItem } from "src/components/Benefits";
+import Map from 'src/icons/Map.svg?react';
+import Gigabytes from 'src/icons/Gigabytes.svg?react';
+import Planes from 'src/icons/Planes.svg?react';
+import Hello from 'src/icons/Hello.svg?react';
+import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import { Trans, useTranslation } from 'react-i18next';
+import { BenefitItem, Benefits } from "src/components/Benefits";
+import { WorkflowStep } from "src/components/Scheme";
+import { CardProps } from "@ui/Card";
+
 
 export const KcellContact = () => {
 
@@ -17,39 +25,91 @@ export const KcellContact = () => {
         {
             title: t('services.list.kcellContact.title'),
             description: t('services.list.kcellContact.subtitle'),
+            text: <Trans
+                i18nKey={`services.list.kcellContact.description`}
+                components={[
+                    <></>,
+                    <a href="https://activ.kz/smart" target="_blank" />,
+                ]}
+            />,
             image: Image4,
         }
     ];
 
+
+
+    const mainAdvantagesTexts: string[] = t('kcellContact.mainAdvantages', { returnObjects: true });
+
+
     const mainAdvantages: BenefitItem[] = [
         {
             Icon: AdditionalService,
-            text: t('internalPage.mainAdvantages.parametersInfo'),
+            text: mainAdvantagesTexts[0],
         },
         {
             Icon: Globe,
-            text: t('internalPage.mainAdvantages.aggregatedData'),
+            text: mainAdvantagesTexts[1],
         },
         {
             Icon: DocumentCheckmark,
-            text: t('internalPage.mainAdvantages.reportFormats'),
+            text: mainAdvantagesTexts[2],
+        },
+        {
+            Icon: DocumentCheckmark,
+            text: mainAdvantagesTexts[3],
         },
     ];
+
+    const featuresAndCapabilitiesTexts: string[] = t('kcellContact.featuresAndCapabilities', { returnObjects: true });
+
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
             Icon: DeliveryLocation,
-            text: t('internalPage.featuresAndCapabilities.geoanalyticsAndHeatmaps'),
+            text: featuresAndCapabilitiesTexts[0],
         },
         {
             Icon: Gear,
-            text: t('internalPage.featuresAndCapabilities.socioDemographicParameters'),
-        },
-        {
-            Icon: Details,
-            text: t('internalPage.featuresAndCapabilities.behavioralAnalytics'),
-        },
+            text: featuresAndCapabilitiesTexts[1],
+        }
     ];
+
+
+    const workflowSteps: WorkflowStep[] = t('kcellContact.workflow.steps', { returnObjects: true });
+
+    const rawUsageExamples: { title: string; description?: string; }[] = t('kcellContact.usageExamples', { returnObjects: true });
+
+
+    const examplesData: Pick<CardProps, 'icon' | 'title' | 'text'>[] = rawUsageExamples.map((item, index) => {
+        let iconComponent = null;
+        switch (index) {
+            case 0:
+                iconComponent = <Map />;
+                break;
+            case 1:
+                iconComponent = <Gigabytes />;
+                break;
+            case 2:
+                iconComponent = <Planes />;
+                break;
+            case 3:
+                iconComponent = <Hello />;
+                break;
+            case 4:
+                iconComponent = <DeviceSettings />;
+                break;
+            default:
+                iconComponent = null;
+        }
+
+        return {
+            icon: iconComponent,
+            title: item.title,
+            text: item.description || undefined,
+        };
+    });
+
+
 
     return (
         <>
@@ -61,12 +121,19 @@ export const KcellContact = () => {
                 secondaryTitle={t('internalPage.featuresAndCapabilities.title')}
                 secondaryBenefitsData={featuresAndCapabilities}
             />
-            <Scheme />
-            <Examples />
-            <Offer />
+            <Scheme
+                workflowSteps={workflowSteps}
+                technicalIntegration={t('kcellContact.technicalIntegration.description')}
+            />
+            <Examples
+                items={examplesData}
+            />
+            <Offer
+                title={t("kcellContact.offerTitle")}
+            />
             <Price
                 title={t("internalPage.pricingTitle")}
-                value={t("internalPage.pricingValue")}
+                value={t("kcellContact.pricingValue")}
             />
             <Services
                 title={t("common.otherOffers")}

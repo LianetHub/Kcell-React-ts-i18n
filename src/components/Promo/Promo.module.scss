@@ -78,6 +78,16 @@
 			letter-spacing: 0.028em;
 			max-width: 32.8125rem;
 			letter-spacing: 0.03em;
+			& a {
+				text-decoration: underline;
+				text-underline-offset: 0.25rem;
+				color: #fff;
+				@media (any-hover: hover) {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
 			&::first-letter {
 				text-transform: uppercase;
 			}

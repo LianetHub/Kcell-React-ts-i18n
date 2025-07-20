@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,7 @@ import { TabKey } from '../Services';
 interface PromoSlide {
     title: string;
     description?: string;
-    text?: string;
+    text?: string | ReactNode;
     image: string;
     link?: string;
     targetTab?: TabKey
