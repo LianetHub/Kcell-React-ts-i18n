@@ -23,14 +23,14 @@ export const DigitalTarget = () => {
 
     const promoSlidesData = [
         {
-            title: t('services.list.digitalResearch.title'),
-            description: t('services.list.digitalResearch.subtitle'),
-            text: t('services.list.digitalResearch.description'),
+            title: t('services.list.digitalTarget.title'),
+            description: t('services.list.digitalTarget.subtitle'),
+            text: t('services.list.digitalTarget.description'),
             image: Image8,
         }
     ];
 
-    const mainAdvantagesTexts: string[] = t('digitalResearch.mainAdvantages', { returnObjects: true });
+    const mainAdvantagesTexts: string[] = t('digitalTarget.mainAdvantages', { returnObjects: true });
 
 
     const mainAdvantages: BenefitItem[] = [
@@ -46,17 +46,9 @@ export const DigitalTarget = () => {
             Icon: DocumentCheckmark,
             text: mainAdvantagesTexts[2],
         },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[3],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[4],
-        },
     ];
 
-    const featuresAndCapabilitiesTexts: string[] = t('digitalResearch.featuresAndCapabilities', { returnObjects: true });
+    const featuresAndCapabilitiesTexts: string[] = t('digitalTarget.featuresAndCapabilities', { returnObjects: true });
 
 
     const featuresAndCapabilities: BenefitItem[] = [
@@ -71,9 +63,9 @@ export const DigitalTarget = () => {
     ];
 
 
-    const workflowSteps: WorkflowStep[] = t('digitalResearch.workflow.steps', { returnObjects: true });
+    const workflowSteps: WorkflowStep[] = t('digitalTarget.workflow.steps', { returnObjects: true });
 
-    const rawUsageExamples: { title: string; description?: string; }[] = t('digitalResearch.usageExamples', { returnObjects: true });
+    const rawUsageExamples: { title: string; description?: string; }[] = t('digitalTarget.usageExamples', { returnObjects: true });
 
 
     const examplesData: Pick<CardProps, 'icon' | 'title' | 'text'>[] = rawUsageExamples.map((item, index) => {
@@ -119,17 +111,17 @@ export const DigitalTarget = () => {
             />
             <Scheme
                 workflowSteps={workflowSteps}
-                technicalIntegration={t('digitalResearch.technicalIntegration.description')}
+                technicalIntegration={t('digitalTarget.technicalIntegration.description')}
             />
             <Examples
                 items={examplesData}
             />
             <Offer
-                title={t("digitalResearch.offerTitle")}
+                title={t("digitalTarget.offerTitle")}
             />
             <Price
                 title={t("internalPage.pricingTitle")}
-                value={t("digitalResearch.pricingValue")}
+                value={t("digitalTarget.pricingValue")}
             />
             <Services
                 title={t("common.otherOffers")}
