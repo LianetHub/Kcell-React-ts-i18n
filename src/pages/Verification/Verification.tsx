@@ -23,14 +23,14 @@ export const Verification = () => {
 
     const promoSlidesData = [
         {
-            title: t('services.list.digitalResearch.title'),
-            description: t('services.list.digitalResearch.subtitle'),
-            text: t('services.list.digitalResearch.description'),
+            title: t('services.list.verification.title'),
+            description: t('services.list.verification.subtitle'),
+            text: t('services.list.verification.description'),
             image: Image9,
         }
     ];
 
-    const mainAdvantagesTexts: string[] = t('digitalResearch.mainAdvantages', { returnObjects: true });
+    const mainAdvantagesTexts: string[] = t('verification.mainAdvantages', { returnObjects: true });
 
 
     const mainAdvantages: BenefitItem[] = [
@@ -45,18 +45,10 @@ export const Verification = () => {
         {
             Icon: DocumentCheckmark,
             text: mainAdvantagesTexts[2],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[3],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[4],
-        },
+        }
     ];
 
-    const featuresAndCapabilitiesTexts: string[] = t('digitalResearch.featuresAndCapabilities', { returnObjects: true });
+    const featuresAndCapabilitiesTexts: string[] = t('verification.featuresAndCapabilities', { returnObjects: true });
 
 
     const featuresAndCapabilities: BenefitItem[] = [
@@ -65,15 +57,19 @@ export const Verification = () => {
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: DeliveryLocation,
             text: featuresAndCapabilitiesTexts[1],
+        },
+        {
+            Icon: Gear,
+            text: featuresAndCapabilitiesTexts[2],
         }
     ];
 
 
-    const workflowSteps: WorkflowStep[] = t('digitalResearch.workflow.steps', { returnObjects: true });
+    const workflowSteps: WorkflowStep[] = t('verification.workflow.steps', { returnObjects: true });
 
-    const rawUsageExamples: { title: string; description?: string; }[] = t('digitalResearch.usageExamples', { returnObjects: true });
+    const rawUsageExamples: { title: string; description?: string; }[] = t('verification.usageExamples', { returnObjects: true });
 
 
     const examplesData: Pick<CardProps, 'icon' | 'title' | 'text'>[] = rawUsageExamples.map((item, index) => {
@@ -119,17 +115,17 @@ export const Verification = () => {
             />
             <Scheme
                 workflowSteps={workflowSteps}
-                technicalIntegration={t('digitalResearch.technicalIntegration.description')}
+                technicalIntegration={t('verification.technicalIntegration.description')}
             />
             <Examples
                 items={examplesData}
             />
             <Offer
-                title={t("digitalResearch.offerTitle")}
+                title={t("verification.offerTitle")}
             />
             <Price
                 title={t("internalPage.pricingTitle")}
-                value={t("digitalResearch.pricingValue")}
+                value={t("verification.pricingValue")}
             />
             <Services
                 title={t("common.otherOffers")}

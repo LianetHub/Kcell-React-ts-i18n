@@ -28,6 +28,12 @@
 			&:nth-child(5n + 5) {
 				grid-column: span 6;
 			}
+			&:first-child:nth-last-child(2) {
+				grid-column: span 3;
+			}
+			&:last-child:nth-child(2) {
+				grid-column: span 3;
+			}
 		}
 		@media (min-width: $md2) {
 			grid-column: span 2;
