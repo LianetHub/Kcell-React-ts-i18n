@@ -25,14 +25,14 @@ export const LeadGeneration = () => {
 
     const promoSlidesData = [
         {
-            title: t('services.list.digitalResearch.title'),
-            description: t('services.list.digitalResearch.subtitle'),
-            text: t('services.list.digitalResearch.description'),
+            title: t('services.list.leadGeneration.title'),
+            description: t('services.list.leadGeneration.subtitle'),
+            text: t('services.list.leadGeneration.description'),
             image: Image5,
         }
     ];
 
-    const mainAdvantagesTexts: string[] = t('digitalResearch.mainAdvantages', { returnObjects: true });
+    const mainAdvantagesTexts: string[] = t('leadGeneration.mainAdvantages', { returnObjects: true });
 
 
     const mainAdvantages: BenefitItem[] = [
@@ -47,18 +47,10 @@ export const LeadGeneration = () => {
         {
             Icon: DocumentCheckmark,
             text: mainAdvantagesTexts[2],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[3],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[4],
-        },
+        }
     ];
 
-    const featuresAndCapabilitiesTexts: string[] = t('digitalResearch.featuresAndCapabilities', { returnObjects: true });
+    const featuresAndCapabilitiesTexts: string[] = t('leadGeneration.featuresAndCapabilities', { returnObjects: true });
 
 
     const featuresAndCapabilities: BenefitItem[] = [
@@ -69,13 +61,17 @@ export const LeadGeneration = () => {
         {
             Icon: Gear,
             text: featuresAndCapabilitiesTexts[1],
-        }
+        },
+        {
+            Icon: Gear,
+            text: featuresAndCapabilitiesTexts[2],
+        },
     ];
 
 
-    const workflowSteps: WorkflowStep[] = t('digitalResearch.workflow.steps', { returnObjects: true });
+    const workflowSteps: WorkflowStep[] = t('leadGeneration.workflow.steps', { returnObjects: true });
 
-    const rawUsageExamples: { title: string; description?: string; }[] = t('digitalResearch.usageExamples', { returnObjects: true });
+    const rawUsageExamples: { title: string; description?: string; }[] = t('leadGeneration.usageExamples', { returnObjects: true });
 
 
     const examplesData: Pick<CardProps, 'icon' | 'title' | 'text'>[] = rawUsageExamples.map((item, index) => {
@@ -121,17 +117,17 @@ export const LeadGeneration = () => {
             />
             <Scheme
                 workflowSteps={workflowSteps}
-                technicalIntegration={t('digitalResearch.technicalIntegration.description')}
+                technicalIntegration={t('leadGeneration.technicalIntegration.description')}
             />
             <Examples
                 items={examplesData}
             />
             <Offer
-                title={t("digitalResearch.offerTitle")}
+                title={t("leadGeneration.offerTitle")}
             />
             <Price
                 title={t("internalPage.pricingTitle")}
-                value={t("digitalResearch.pricingValue")}
+                value={t("leadGeneration.pricingValue")}
             />
             <Services
                 title={t("common.otherOffers")}
