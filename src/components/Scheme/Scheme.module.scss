@@ -43,8 +43,10 @@
 	&StepHeader {
 		display: flex;
 		align-items: center;
-		cursor: pointer;
 		gap: 0.5rem;
+		&:has(.schemeStepButton) {
+			cursor: pointer;
+		}
 		@media (min-width: $md3) {
 			gap: 1rem;
 		}
@@ -97,6 +99,11 @@
 			margin-left: 3.5rem;
 			margin-right: 2.5rem;
 		}
+	}
+
+	&StepList {
+		padding-left: 1em;
+		list-style: disc;
 	}
 
 	&StepButton {

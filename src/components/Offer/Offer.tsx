@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'; // Добавляем useState
+import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import css from './Offer.module.scss';
@@ -6,9 +6,12 @@ import clsx from 'clsx';
 import { Button } from '@ui/Button';
 import { Input } from '@ui/Input';
 
-export const Offer: FC = () => {
-    const { t } = useTranslation();
+interface OfferProps {
+    title?: string;
+}
 
+export const Offer: FC<OfferProps> = ({ title }) => {
+    const { t } = useTranslation();
 
     const [name, setName] = useState<string>('');
     const [phone, setPhone] = useState<string>('+7');
@@ -29,7 +32,6 @@ export const Offer: FC = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-
         const formData = {
             name: name,
             phone: phone,
@@ -37,8 +39,6 @@ export const Offer: FC = () => {
         };
 
         console.log('Данные формы для отправки:', formData);
-
-
     };
 
     return (
@@ -46,7 +46,7 @@ export const Offer: FC = () => {
             <div className={clsx(css.offerContainer, 'container')}>
                 <div className={css.offerBody}>
                     <h2 className={clsx(css.offerTitle, 'title')}>
-                        {t('form.fillOutForm')}
+                        {title || t('form.fillOutForm')}
                     </h2>
                     <form onSubmit={handleSubmit} className={css.offerForm}>
                         <div className={css.offerFormFields}>

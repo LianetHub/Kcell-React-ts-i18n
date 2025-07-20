@@ -117,64 +117,79 @@
     },
     "internalPage": {
         "mainAdvantages": {
-            "title": "Основные преимущества",
-            "parametersInfo": "Более 400 параметров, 7 миллионов активных абонентов, 50 миллиардов событий в сети ежедневно, 2,5 петабайт данных для анализа.",
-            "aggregatedData": "Агрегированные данные по Республике, области, городу\u00A0и т.п.",
-            "reportFormats": "Поддержка различных форматов отчетов (Excel, PowerPoint, Power BI)."
+            "title": "Основные преимущества"
         },
         "featuresAndCapabilities": {
-            "title": "Функции и возможности",
-            "geoanalyticsAndHeatmaps": "Геоаналитика и тепловые карты",
-            "socioDemographicParameters": "Социально демографические параметры",
-            "behavioralAnalytics": "Поведенческая аналитика по трафику и интересам"
+            "title": "Функции и возможности"
         },
         "workflow": {
-            "title": "Схема работы",
-            "fillFormOrMeet": {
-                "title": "Заполнение анкеты или встреча",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "technicalSpecificationApproval": {
-                "title": "Согласование технического задания",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "commercialProposalCalculation": {
-                "title": "Расчет коммерческого предложения",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "reportPreparationAndTransfer": {
-                "title": "Подготавливается и передача отчета",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            }
+            "title": "Схема работы"
         },
         "technicalIntegration": {
-            "title": "Техническая интеграция",
-            "description": "Техническая интеграция не требуется — результат передается в формате Excel, PDF, по API или ссылкой на интерактивный дэшборд"
+            "title": "Техническая интеграция"
         },
         "usageExamples": {
-            "title": "Примеры использования",
-            "geolocationReport": {
-                "title": "Геолокационный отчет по области, району, населенному пункту",
-                "description": "портрет жителей, плотность населения, места скопления"
-            },
-            "socialScoring": {
-                "title": "Социальный скоринг",
-                "description": "соц дем параметры и интересы (звонковые, интернет и СМС) для открытия новых точек, анализа посетителей, поиска потенциальных клиентов"
-            },
-            "tourismMonitoring": {
-                "title": "Мониторинг по туристическим объектам",
-                "description": "аналитика посещений в разрезе периода, места проживания туристов, доля иностранных туристов и страны, откуда они прибыли"
-            },
-            "behavioralAndGeoAnalysis": {
-                "title": "Поведенческий и гео анализ",
-                "description": "аналитика по группам: школьники, студенты, высокодоходные абоненты и тд."
-            },
-            "mobileDeviceAnalytics": {
-                "title": "Аналитика по мобильным устройствам",
-                "description": "для дистрибьюторов и производителей устройств. Портреты пользователей, геолокации, количества устройств в разрезе периодов и моделей, замены и переходы на другие устройства."
-            }
+            "title": "Примеры использования"
         },
-        "pricingTitle": "Стоимость в тенге с учетом НДС:",
-        "pricingValue": "30 000 ₸ × часы анализа"
+        "pricingTitle": "Стоимость в тенге с учетом НДС:"
+    },
+    "digitalResearch": {
+        "mainAdvantages": [
+            "Гарантированная доставка ссылки на опрос через SMS ",
+            "Таргетинг респондентов по нужным критериям",
+            "Гибкость анкет: от 10 до 50 вопросов ",
+            "Быстрая реализация - от 5 дней ",
+            "Максимальный отклик аудитории через бонусное стимулирование"
+        ],
+        "featuresAndCapabilities": [
+            "Разные уровни сложности анкет (простая, средняя, сложная) ",
+            "Структурированный отчёт в таблицах"
+        ],
+        "workflow": {
+            "steps": [
+                {
+                    "id": 1,
+                    "title": "Подготовительный этап",
+                    "list": [
+                        "Клиент заполняет бриф → получает КП ",
+                        "Совместная проработка ТЗ и анкеты ",
+                        "Подписание договора ",
+                        "Разработка скрипта, программирование и тест анкеты"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Основной этап",
+                    "list": [
+                        "Проведение опроса",
+                        "Сбор и обработка ответов"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Завершающий этап",
+                    "list": [
+                        "Формирование финальной базы",
+                        "Отчёт в формате Excel"
+                    ]
+                }
+            ]
+        },
+        "technicalIntegration": {
+            "description": "Сбор аудитории и обзвон базы посредством технического решения Кселл"
+        },
+        "usageExamples": [
+            {
+                "title": "Оценка NPS, спроса, узнаваемости"
+            },
+            {
+                "title": "Тестирование продукта"
+            },
+            {
+                "title": "Анализ рынка и др."
+            }
+        ],
+        "offerTitle": "Закажите опрос и узнайте мнение своей аудитории уже на этой неделе",
+        "pricingValue": "От 700 ₸ за анкету. Минимум 100 респондентов. Цена зависит от сложности анкеты и темы"
     }
 }

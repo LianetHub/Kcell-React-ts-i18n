@@ -14,6 +14,7 @@ import { TabKey } from '../Services';
 interface PromoSlide {
     title: string;
     description?: string;
+    text?: string;
     image: string;
     link?: string;
     targetTab?: TabKey
@@ -59,6 +60,12 @@ export const Promo: FC<PromoProps> = ({ slides, onButtonClick }) => {
                                             {slide.description}
                                         </p>
                                     )}
+                                    {slide.text && (
+                                        <p className={css.promoCardText}>
+                                            {slide.text}
+                                        </p>
+                                    )}
+
                                     {slide.link && (
                                         <Button
                                             to={slide.link}

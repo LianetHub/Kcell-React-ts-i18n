@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, ReactNode } from "react";
 import css from './Card.module.scss';
 import clsx from "clsx";
 
-interface Props {
+export interface CardProps {
     className?: string;
     icon?: ReactNode;
     title?: string;
@@ -10,7 +10,7 @@ interface Props {
     color?: "grey" | "white"
 }
 
-export const Card: FC<PropsWithChildren<Props>> = ({
+export const Card: FC<PropsWithChildren<CardProps>> = ({
     className,
     icon,
     title,

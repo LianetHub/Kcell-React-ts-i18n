@@ -7,7 +7,8 @@ import css from '../Scheme.module.scss';
 interface SchemeStepProps {
     id: number;
     title: string;
-    description: string;
+    description?: string;
+    list?: string[];
     isOpen: boolean;
     onToggle: (id: number) => void;
     register: (
@@ -22,30 +23,49 @@ export const SchemeStep: FC<SchemeStepProps> = ({
     id,
     title,
     description,
+    list,
     isOpen,
     onToggle,
     register,
 }) => {
     const { elementRef, slideToggle } = useSlideToggle();
 
+
+    const hasToggleableContent = description || (list && list.length > 0);
+
     useEffect(() => {
-        register(id, elementRef, slideToggle);
-    }, [id, register, elementRef, slideToggle]);
+
+        if (hasToggleableContent) {
+            register(id, elementRef, slideToggle);
+        }
+    }, [id, register, elementRef, slideToggle, hasToggleableContent]);
 
     return (
         <li className={clsx(css.schemeStep, { [css.active]: isOpen })}>
-            <div className={css.schemeStepHeader} onClick={() => onToggle(id)}>
+            <div className={css.schemeStepHeader} onClick={() => hasToggleableContent && onToggle(id)}>
                 <span className={css.schemeStepNum}>{id}</span>
                 <div className={css.schemeStepBody}>
                     <div className={css.schemeStepTitle}>{title}</div>
                 </div>
-                <button className={clsx(css.schemeStepButton)}>
-                    <ArrowDown />
-                </button>
+                {hasToggleableContent && (
+                    <button className={clsx(css.schemeStepButton)}>
+                        <ArrowDown />
+                    </button>
+                )}
             </div>
-            <div ref={elementRef} className={css.schemeStepDescription}>
-                {description}
-            </div>
+            {hasToggleableContent && (
+                <div ref={elementRef} className={css.schemeStepDescription}>
+                    {list && list.length > 0 ? (
+                        <ul className={css.schemeStepList}>
+                            {list.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        description
+                    )}
+                </div>
+            )}
         </li>
     );
 };

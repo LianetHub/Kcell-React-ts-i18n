@@ -6,37 +6,20 @@ import Gear from 'src/icons/Gear.svg?react';
 import { Card } from '@ui/Card';
 import { SchemeStep } from './SchemeStep';
 
-interface WorkflowStep {
+export interface WorkflowStep {
     id: number;
     title: string;
-    description: string;
+    description?: string;
+    list?: string[];
 }
 
-export const Scheme: FC = () => {
-    const { t } = useTranslation();
+interface SchemeProps {
+    workflowSteps: WorkflowStep[];
+    technicalIntegration: string
+}
 
-    const workflowSteps: WorkflowStep[] = [
-        {
-            id: 1,
-            title: t('internalPage.workflow.fillFormOrMeet.title'),
-            description: t('internalPage.workflow.fillFormOrMeet.description'),
-        },
-        {
-            id: 2,
-            title: t('internalPage.workflow.technicalSpecificationApproval.title'),
-            description: t('internalPage.workflow.technicalSpecificationApproval.description'),
-        },
-        {
-            id: 3,
-            title: t('internalPage.workflow.commercialProposalCalculation.title'),
-            description: t('internalPage.workflow.commercialProposalCalculation.description'),
-        },
-        {
-            id: 4,
-            title: t('internalPage.workflow.reportPreparationAndTransfer.title'),
-            description: t('internalPage.workflow.reportPreparationAndTransfer.description'),
-        },
-    ];
+export const Scheme: FC<SchemeProps> = ({ workflowSteps, technicalIntegration }) => {
+    const { t } = useTranslation();
 
     const togglesRef = useRef<Record<
         number,
@@ -68,10 +51,12 @@ export const Scheme: FC = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            togglesRef.current[1]?.slideToggle();
+            if (workflowSteps[0] && (workflowSteps[0].description || workflowSteps[0].list)) {
+                togglesRef.current[1]?.slideToggle();
+            }
         }, 0);
         return () => clearTimeout(timer);
-    }, []);
+    }, [workflowSteps]);
 
     return (
         <div className={css.scheme}>
@@ -86,6 +71,7 @@ export const Scheme: FC = () => {
                             id={step.id}
                             title={step.title}
                             description={step.description}
+                            list={step.list}
                             isOpen={openStepId === step.id}
                             onToggle={handleToggle}
                             register={registerStep}
@@ -95,7 +81,7 @@ export const Scheme: FC = () => {
                 <Card
                     className={css.schemeBottom}
                     title={t('internalPage.technicalIntegration.title')}
-                    text={t('internalPage.technicalIntegration.description')}
+                    text={technicalIntegration}
                     icon={<Gear />}
                     color='white'
                 />
