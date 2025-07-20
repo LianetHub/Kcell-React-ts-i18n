@@ -2,7 +2,6 @@ import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image6 from 'src/assets/images/promo/06.png';
 import AdditionalService from 'src/icons/AdditionalService.svg?react';
 import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
 import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
 import Map from 'src/icons/Map.svg?react';
@@ -23,14 +22,14 @@ export const TargetCall = () => {
 
     const promoSlidesData = [
         {
-            title: t('services.list.digitalResearch.title'),
-            description: t('services.list.digitalResearch.subtitle'),
-            text: t('services.list.digitalResearch.description'),
+            title: t('services.list.targetCall.title'),
+            description: t('services.list.targetCall.subtitle'),
+            text: t('services.list.targetCall.description'),
             image: Image6,
         }
     ];
 
-    const mainAdvantagesTexts: string[] = t('digitalResearch.mainAdvantages', { returnObjects: true });
+    const mainAdvantagesTexts: string[] = t('targetCall.mainAdvantages', { returnObjects: true });
 
 
     const mainAdvantages: BenefitItem[] = [
@@ -41,22 +40,10 @@ export const TargetCall = () => {
         {
             Icon: Globe,
             text: mainAdvantagesTexts[1],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[2],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[3],
-        },
-        {
-            Icon: DocumentCheckmark,
-            text: mainAdvantagesTexts[4],
-        },
+        }
     ];
 
-    const featuresAndCapabilitiesTexts: string[] = t('digitalResearch.featuresAndCapabilities', { returnObjects: true });
+    const featuresAndCapabilitiesTexts: string[] = t('targetCall.featuresAndCapabilities', { returnObjects: true });
 
 
     const featuresAndCapabilities: BenefitItem[] = [
@@ -67,13 +54,17 @@ export const TargetCall = () => {
         {
             Icon: Gear,
             text: featuresAndCapabilitiesTexts[1],
-        }
+        },
+        {
+            Icon: Gear,
+            text: featuresAndCapabilitiesTexts[2],
+        },
     ];
 
 
-    const workflowSteps: WorkflowStep[] = t('digitalResearch.workflow.steps', { returnObjects: true });
+    const workflowSteps: WorkflowStep[] = t('targetCall.workflow.steps', { returnObjects: true });
 
-    const rawUsageExamples: { title: string; description?: string; }[] = t('digitalResearch.usageExamples', { returnObjects: true });
+    const rawUsageExamples: { title: string; description?: string; }[] = t('targetCall.usageExamples', { returnObjects: true });
 
 
     const examplesData: Pick<CardProps, 'icon' | 'title' | 'text'>[] = rawUsageExamples.map((item, index) => {
@@ -119,17 +110,17 @@ export const TargetCall = () => {
             />
             <Scheme
                 workflowSteps={workflowSteps}
-                technicalIntegration={t('digitalResearch.technicalIntegration.description')}
+                technicalIntegration={t('targetCall.technicalIntegration.description')}
             />
             <Examples
                 items={examplesData}
             />
             <Offer
-                title={t("digitalResearch.offerTitle")}
+                title={t("targetCall.offerTitle")}
             />
             <Price
                 title={t("internalPage.pricingTitle")}
-                value={t("digitalResearch.pricingValue")}
+                value={t("targetCall.pricingValue")}
             />
             <Services
                 title={t("common.otherOffers")}
