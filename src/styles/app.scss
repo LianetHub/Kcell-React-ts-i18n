@@ -16,7 +16,7 @@ body {
 	line-height: normal;
 	color: $black;
 	background-color: $white;
-	r &:has(.menu.active) {
+	&:has(.menu.active) {
 		@media (max-width: $md3) {
 			overflow: hidden;
 		}

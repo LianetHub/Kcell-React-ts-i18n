@@ -1,12 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import { Header, Page, Footer } from "./components/Layout";
 
-import { Verification, TargetCall, BusinessLook, DigitalResearch, DigitalTarget, Home, KcellContact, LeadGeneration, Scoring } from "./pages";
+import {
+  Verification, TargetCall, BusinessLook, DigitalResearch,
+  DigitalTarget, Home, KcellContact, LeadGeneration, Scoring
+} from "./pages";
 
+function AppRoutes() {
+  const { pathname } = useLocation();
 
-export default function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Page>
         <Routes>
@@ -22,6 +32,14 @@ export default function App() {
         </Routes>
       </Page>
       <Footer />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
     </BrowserRouter>
   );
 }

@@ -1,15 +1,19 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image9 from 'src/assets/images/promo/09.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
+
+
+import Docs from 'src/icons/Docs.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
+
+import UserIdentity from 'src/icons/UserIdentity.svg?react';
+import Resident from 'src/icons/Resident.svg?react';
+import Promotion from 'src/icons/Promotion.svg?react';
+
+import PersonAlive from 'src/icons/PersonAlive.svg?react';
+import Database from 'src/icons/Database.svg?react';
+
+
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -35,11 +39,11 @@ export const Verification = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: Docs,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: Gear,
             text: mainAdvantagesTexts[1],
         },
         {
@@ -53,15 +57,15 @@ export const Verification = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: UserIdentity,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: DeliveryLocation,
+            Icon: Resident,
             text: featuresAndCapabilitiesTexts[1],
         },
         {
-            Icon: Gear,
+            Icon: Promotion,
             text: featuresAndCapabilitiesTexts[2],
         }
     ];
@@ -76,19 +80,10 @@ export const Verification = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
+                iconComponent = <PersonAlive />;
                 break;
             case 1:
-                iconComponent = <Gigabytes />;
-                break;
-            case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <Database />;
                 break;
             default:
                 iconComponent = null;

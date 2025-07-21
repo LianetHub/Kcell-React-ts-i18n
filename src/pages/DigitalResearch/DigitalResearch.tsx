@@ -1,15 +1,17 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image10 from 'src/assets/images/promo/10.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
+import EnvelopeDownload from 'src/icons/EnvelopeDownload.svg?react';
+import Target from 'src/icons/Target.svg?react';
+import Documents from 'src/icons/Documents.svg?react';
+import Calendar from 'src/icons/Calendar.svg?react';
+import Social from 'src/icons/Social.svg?react';
+
+import Docs from 'src/icons/Docs.svg?react';
 import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
-import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import Satellite from 'src/icons/Satellite.svg?react';
+import Secure from 'src/icons/Secure.svg?react';
+import GoingUp from 'src/icons/GoingUp.svg?react';
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -34,23 +36,23 @@ export function DigitalResearch() {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: EnvelopeDownload,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: Target,
             text: mainAdvantagesTexts[1],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Documents,
             text: mainAdvantagesTexts[2],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Calendar,
             text: mainAdvantagesTexts[3],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Social,
             text: mainAdvantagesTexts[4],
         },
     ];
@@ -60,11 +62,11 @@ export function DigitalResearch() {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: Docs,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: DocumentCheckmark,
             text: featuresAndCapabilitiesTexts[1],
         }
     ];
@@ -79,19 +81,13 @@ export function DigitalResearch() {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
+                iconComponent = <Satellite />;
                 break;
             case 1:
-                iconComponent = <Gigabytes />;
+                iconComponent = <Secure />;
                 break;
             case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <GoingUp />;
                 break;
             default:
                 iconComponent = null;

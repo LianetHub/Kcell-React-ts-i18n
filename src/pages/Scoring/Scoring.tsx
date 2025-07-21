@@ -1,15 +1,19 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image7 from 'src/assets/images/promo/07.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
+
+import Briefcase from 'src/icons/Briefcase.svg?react';
+import Chip from 'src/icons/Chip.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
+
+import Autoplay from 'src/icons/Autoplay.svg?react';
+import PayWithCash from 'src/icons/PayWithCash.svg?react';
+import Secure from 'src/icons/Secure.svg?react';
+
+import Search from 'src/icons/Search.svg?react';
 import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+
+
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -35,15 +39,15 @@ export const Scoring = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: Briefcase,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: Chip,
             text: mainAdvantagesTexts[1],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Gear,
             text: mainAdvantagesTexts[2],
         }
     ];
@@ -53,15 +57,15 @@ export const Scoring = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: Autoplay,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: PayWithCash,
             text: featuresAndCapabilitiesTexts[1],
         },
         {
-            Icon: Gear,
+            Icon: Secure,
             text: featuresAndCapabilitiesTexts[2],
         }
     ];
@@ -76,19 +80,13 @@ export const Scoring = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
+                iconComponent = <Search />;
                 break;
             case 1:
                 iconComponent = <Gigabytes />;
                 break;
             case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <Secure />;
                 break;
             default:
                 iconComponent = null;

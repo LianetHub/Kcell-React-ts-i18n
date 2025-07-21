@@ -1,15 +1,15 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image8 from 'src/assets/images/promo/08.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
+
+import Star from 'src/icons/Star.svg?react';
+import Target from 'src/icons/Target.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import ParentControl from 'src/icons/ParentControl.svg?react';
+import ZeroActive from 'src/icons/ZeroActive.svg?react';
+
+import DocOfficial from 'src/icons/DocOfficial.svg?react';
+
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -35,15 +35,15 @@ export const DigitalTarget = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: Star,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: Target,
             text: mainAdvantagesTexts[1],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Gear,
             text: mainAdvantagesTexts[2],
         },
     ];
@@ -53,11 +53,11 @@ export const DigitalTarget = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: ParentControl,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: ZeroActive,
             text: featuresAndCapabilitiesTexts[1],
         }
     ];
@@ -72,19 +72,7 @@ export const DigitalTarget = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
-                break;
-            case 1:
-                iconComponent = <Gigabytes />;
-                break;
-            case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <DocOfficial />;
                 break;
             default:
                 iconComponent = null;

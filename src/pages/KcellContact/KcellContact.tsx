@@ -1,15 +1,17 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image4 from 'src/assets/images/promo/04.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
-import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import FlashSMS from 'src/icons/FlashSMS.svg?react';
+import CallID from 'src/icons/CallID.svg?react';
+import Target from 'src/icons/Target.svg?react';
+import Briefcase from 'src/icons/Briefcase.svg?react';
+
+import Faq from 'src/icons/Faq.svg?react';
+import ParentControl from 'src/icons/ParentControl.svg?react';
+
+import DocOfficial from 'src/icons/DocOfficial.svg?react';
+
+
 
 import { Trans, useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -43,19 +45,19 @@ export const KcellContact = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: FlashSMS,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: CallID,
             text: mainAdvantagesTexts[1],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Target,
             text: mainAdvantagesTexts[2],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Briefcase,
             text: mainAdvantagesTexts[3],
         },
     ];
@@ -65,11 +67,11 @@ export const KcellContact = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: Faq,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: ParentControl,
             text: featuresAndCapabilitiesTexts[1],
         }
     ];
@@ -84,20 +86,9 @@ export const KcellContact = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
+                iconComponent = <DocOfficial />;
                 break;
-            case 1:
-                iconComponent = <Gigabytes />;
-                break;
-            case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
-                break;
+
             default:
                 iconComponent = null;
         }

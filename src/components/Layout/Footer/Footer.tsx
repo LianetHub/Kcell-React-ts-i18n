@@ -24,7 +24,6 @@ type FooterTextKey =
     | 'footer.frequentlyAskedQuestions'
     | 'footer.archiveOfGoodsAndServices'
     | 'footer.corporateClientAdvantages'
-    | 'footer.leaveRequest'
     | 'footer.becomeCorporateClient'
     | 'footer.forCorporateClients'
     | 'footer.serviceQuestions'
@@ -85,8 +84,7 @@ export const Footer: FC = () => {
     ];
 
     const becomeCorporateClientLinks: { to: string; textKey: FooterTextKey }[] = [
-        { to: 'https://b2b.kcell.kz/ru/article/2709/531', textKey: 'footer.corporateClientAdvantages' },
-        { to: 'https://survey.kcell.kz/limesurvey/index.php/417257/lang-ru', textKey: 'footer.leaveRequest' },
+        { to: 'https://b2b.kcell.kz/ru/article/2709/531', textKey: 'footer.corporateClientAdvantages' }
     ];
 
 

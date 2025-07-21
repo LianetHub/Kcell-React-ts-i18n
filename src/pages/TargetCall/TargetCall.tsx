@@ -1,14 +1,15 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image6 from 'src/assets/images/promo/06.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
-import Globe from 'src/icons/Globe.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
+
+import Social from 'src/icons/Social.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import Target from 'src/icons/Target.svg?react';
+import CallID from 'src/icons/CallID.svg?react';
+import PayForMe from 'src/icons/PayForMe.svg?react';
+
+
+import DocOfficial from 'src/icons/DocOfficial.svg?react';
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -34,11 +35,11 @@ export const TargetCall = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: Social,
             text: mainAdvantagesTexts[0],
         },
         {
-            Icon: Globe,
+            Icon: Gear,
             text: mainAdvantagesTexts[1],
         }
     ];
@@ -48,15 +49,15 @@ export const TargetCall = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: Target,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: CallID,
             text: featuresAndCapabilitiesTexts[1],
         },
         {
-            Icon: Gear,
+            Icon: PayForMe,
             text: featuresAndCapabilitiesTexts[2],
         },
     ];
@@ -71,19 +72,7 @@ export const TargetCall = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
-                break;
-            case 1:
-                iconComponent = <Gigabytes />;
-                break;
-            case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <DocOfficial />;
                 break;
             default:
                 iconComponent = null;

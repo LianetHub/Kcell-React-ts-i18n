@@ -1,15 +1,16 @@
 import { Examples, Offer, Price, Promo, Scheme, Services } from "src/components"
 import Image5 from 'src/assets/images/promo/05.png';
-import AdditionalService from 'src/icons/AdditionalService.svg?react';
+
+
+import Social from 'src/icons/Social.svg?react';
 import Globe from 'src/icons/Globe.svg?react';
-import DocumentCheckmark from 'src/icons/DocumentCheckmark.svg?react';
-import DeliveryLocation from 'src/icons/DeliveryLocation.svg?react';
+import Target from 'src/icons/Target.svg?react';
+
+import Precent from 'src/icons/Precent.svg?react';
+import PayForMe from 'src/icons/PayForMe.svg?react';
 import Gear from 'src/icons/Gear.svg?react';
-import Map from 'src/icons/Map.svg?react';
-import Gigabytes from 'src/icons/Gigabytes.svg?react';
-import Planes from 'src/icons/Planes.svg?react';
-import Hello from 'src/icons/Hello.svg?react';
-import DeviceSettings from 'src/icons/DeviceSettings.svg?react';
+
+import DocOfficial from 'src/icons/DocOfficial.svg?react';
 
 import { useTranslation } from 'react-i18next';
 import { BenefitItem, Benefits } from "src/components/Benefits";
@@ -37,7 +38,7 @@ export const LeadGeneration = () => {
 
     const mainAdvantages: BenefitItem[] = [
         {
-            Icon: AdditionalService,
+            Icon: Social,
             text: mainAdvantagesTexts[0],
         },
         {
@@ -45,7 +46,7 @@ export const LeadGeneration = () => {
             text: mainAdvantagesTexts[1],
         },
         {
-            Icon: DocumentCheckmark,
+            Icon: Target,
             text: mainAdvantagesTexts[2],
         }
     ];
@@ -55,11 +56,11 @@ export const LeadGeneration = () => {
 
     const featuresAndCapabilities: BenefitItem[] = [
         {
-            Icon: DeliveryLocation,
+            Icon: Precent,
             text: featuresAndCapabilitiesTexts[0],
         },
         {
-            Icon: Gear,
+            Icon: PayForMe,
             text: featuresAndCapabilitiesTexts[1],
         },
         {
@@ -78,19 +79,7 @@ export const LeadGeneration = () => {
         let iconComponent = null;
         switch (index) {
             case 0:
-                iconComponent = <Map />;
-                break;
-            case 1:
-                iconComponent = <Gigabytes />;
-                break;
-            case 2:
-                iconComponent = <Planes />;
-                break;
-            case 3:
-                iconComponent = <Hello />;
-                break;
-            case 4:
-                iconComponent = <DeviceSettings />;
+                iconComponent = <DocOfficial />;
                 break;
             default:
                 iconComponent = null;
